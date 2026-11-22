@@ -5,6 +5,8 @@ Static one-page site for Two Shadows Gut & Digestion soft chews. No build step.
 - `index.html` — the page (desktop layout + inline styles)
 - `assets/tc-mobile.css` — phone layout (≤ 760 px)
 - `assets/*.png, *.jpg` — hero, breed portraits and ingredient photos (AI-generated, black & white)
+- `favicon.ico`, `favicon.svg`, `apple-touch-icon.png`, `assets/icons/`, `site.webmanifest` — favicon set (TS monogram small, stacked TWO / SHADOWS for 180 px and up)
+- `brand/` — stacked logo, 512×512 PNG and outlined SVG
 - `vercel.json` — clean URLs, `noindex` header while in review
 
 ## Deploy on Vercel
