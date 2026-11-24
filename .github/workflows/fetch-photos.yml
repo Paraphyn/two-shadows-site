@@ -1,0 +1,40 @@
+# Downloads the generated photos listed in assets/photos/sources.json,
+# converts them to web-sized JPGs and commits them to the repo.
+name: Fetch photos
+on:
+  push:
+    paths: ['assets/photos/sources.json']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install pillow
+      - name: Download and convert
+        run: |
+          python - <<'PY'
+          import json, urllib.request, io, os
+          from PIL import Image
+          src = json.load(open('assets/photos/sources.json'))
+          for name, spec in src.items():
+              out = f'assets/photos/{name}.jpg'
+              if os.path.exists(out):
+                  continue
+              data = urllib.request.urlopen(spec['url']).read()
+              im = Image.open(io.BytesIO(data)).convert('RGB')
+              im.thumbnail((spec.get('max', 1600),) * 2, Image.LANCZOS)
+              im.save(out, quality=82, optimize=True, progressive=True)
+              print('saved', out, im.size)
+          PY
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/photos
+          git diff --cached --quiet || git commit -m "Fetch generated photos"
+          git push
