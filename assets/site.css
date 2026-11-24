@@ -221,12 +221,12 @@ h1, h2, h3, p { margin: 0; }
 .fw { display: flex; align-items: center; gap: 12px; white-space: nowrap; line-height: 1; }
 /* Silhouettes keep the label's relative sizes: Figma frame size × --k */
 .feed { --k: 1.8; } /* 2× label size */
-.dog { flex: none; width: calc(26px * var(--k)); height: calc(19.7975px * var(--k)); display: flex; align-items: center; justify-content: center; color: var(--plum); } /* each dog centred on the row, level with the weight label */
+.dog { flex: none; width: calc(25.08px * var(--k)); height: calc(18.94px * var(--k)); display: flex; align-items: center; justify-content: center; color: var(--plum); } /* each dog centred on the row, level with the weight label */
 .dog svg { display: block; fill: currentColor; }
-.dog-s { width: calc(12.5984px * var(--k)); height: calc(11.0236px * var(--k)); }
-.dog-m { width: calc(18.2227px * var(--k)); height: calc(14.3982px * var(--k)); }
-.dog-l { width: calc(24.072px * var(--k)); height: calc(18.2227px * var(--k)); }
-.dog-xl { width: calc(25.8718px * var(--k)); height: calc(19.7975px * var(--k)); }
+.dog-s { width: calc(11.968px * var(--k)); height: calc(10.328px * var(--k)); }
+.dog-m { width: calc(17.289px * var(--k)); height: calc(13.573px * var(--k)); }
+.dog-l { width: calc(23.209px * var(--k)); height: calc(17.353px * var(--k)); }
+.dog-xl { width: calc(25.076px * var(--k)); height: calc(18.935px * var(--k)); }
 .feed-wrap { padding-bottom: 8px; }
 .feed-wrap .feed { font-size: 16px; }
 .feed-wrap .feed th, .feed-wrap .feed td { padding: 8px 12px 8px 0; }
