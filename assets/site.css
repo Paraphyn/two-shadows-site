@@ -217,6 +217,19 @@ h1, h2, h3, p { margin: 0; }
 .feed { width: 100%; border-collapse: collapse; font-size: 17px; }
 .feed th, .feed td { text-align: left; padding: 12px 16px 12px 0; border-bottom: 1px solid var(--line); }
 .feed th { font: 600 13px var(--ui); color: var(--muted); letter-spacing: .04em; }
+.feed td { vertical-align: middle; }
+.fw { display: flex; align-items: center; gap: 14px; white-space: nowrap; }
+/* Silhouettes keep the label's relative sizes: Figma frame size × --k */
+.feed { --k: 2.6; }
+.dog { flex: none; width: calc(26px * var(--k)); height: calc(20px * var(--k)); display: flex; align-items: flex-end; justify-content: center; color: var(--plum); }
+.dog svg { display: block; fill: currentColor; }
+.dog-s { width: calc(12.5984px * var(--k)); height: calc(11.0236px * var(--k)); }
+.dog-m { width: calc(18.2227px * var(--k)); height: calc(14.3982px * var(--k)); }
+.dog-l { width: calc(24.072px * var(--k)); height: calc(18.2227px * var(--k)); }
+.dog-xl { width: calc(25.8718px * var(--k)); height: calc(19.7975px * var(--k)); }
+.feed-wrap { padding-bottom: 8px; }
+.feed-wrap .feed { --k: 1.8; font-size: 16px; }
+.feed-wrap .feed th, .feed-wrap .feed td { padding: 8px 12px 8px 0; }
 .prose { max-width: 760px; }
 .prose h2 { font: 600 22px/1.3 var(--ui); margin: 48px 0 14px; }
 .prose h3 { font: 600 17px/1.35 var(--ui); margin: 28px 0 8px; }
@@ -311,6 +324,10 @@ h1, h2, h3, p { margin: 0; }
   .foot-grid { grid-template-columns: 1fr; }
   .page-hero { padding: 40px 0 48px; }
   .spec > div { grid-template-columns: 1fr; gap: 6px; }
+  .fw { gap: 10px; }
+  .feed { --k: 1.8; font-size: 16px; }
+  .feed-wrap .feed { --k: 1.5; font-size: 15px; }
+  .feed th { font-size: 12px; }
   .card { padding: 22px; }
   .wordmark { margin-top: 48px; }
   .stickybuy-in { min-height: 64px; gap: 10px; }
