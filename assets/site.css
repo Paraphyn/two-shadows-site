@@ -220,7 +220,7 @@ h1, h2, h3, p { margin: 0; }
 .feed td { vertical-align: middle; }
 .fw { display: flex; align-items: center; gap: 12px; white-space: nowrap; line-height: 1; }
 /* Silhouettes keep the label's relative sizes: Figma frame size × --k */
-.feed { --k: .9; } /* ≈ label size; was 2.6 */
+.feed { --k: 1.8; } /* 2× label size */
 .dog { flex: none; width: calc(26px * var(--k)); height: calc(19.7975px * var(--k)); display: flex; align-items: flex-end; justify-content: center; color: var(--plum); } /* box = giant dog; feet on one baseline as on the pack, box centred on the row */
 .dog svg { display: block; fill: currentColor; }
 .dog-s { width: calc(12.5984px * var(--k)); height: calc(11.0236px * var(--k)); }
