@@ -87,16 +87,18 @@
 <div class="kicker" style="margin:0">Soft chews for dogs</div>
 <h2 id="pt">Gut &amp; Digestion</h2>
 <p class="sub">A little daily care, from the inside out.</p>
-<p class="desc">Each chew combines Bacillus velezensis, a live gut-flora culture, with prebiotic inulin, psyllium husk and pumpkin and squash seeds. It’s designed to support healthy digestion, and most dogs treat it as a treat.</p>
-<ul class="checks"><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B3550" stroke-width="2.2" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Supports healthy digestion</li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B3550" stroke-width="2.2" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Helps keep gut flora in balance</li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B3550" stroke-width="2.2" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>One to four chews a day, by weight</li></ul>
-<p class="ph" style="font-size:14px">[Benefit wording to be confirmed with the manufacturer]</p>
-<dl class="facts" style="margin:0"><div><dt>Contents</dt><dd>60 soft chews</dd></div><div><dt>Net weight</dt><dd>120 g ℮</dd></div><div><dt>Lasts</dt><dd>30 days*</dd></div><div><dt>For</dt><dd>Dogs 12 wks+</dd></div></dl>
+<div class="buybox" id="buy">
 <fieldset class="buy"><legend>How would you like it?</legend>
 <label class="opt"><input type="radio" name="buy" checked><span class="t">Subscribe &amp; save<span class="save">[XX]%</span><small>A jar every [X] weeks. Skip or cancel anytime.</small></span><span class="p">[£PRICE]</span></label>
 <label class="opt"><input type="radio" name="buy"><span class="t">One-time purchase</span><span class="p">[£PRICE]</span></label>
 </fieldset>
 <button type="button" class="btn add">Add to bag · [£PRICE]</button>
 <p class="small">*One jar lasts 30 days for a 10–30 kg dog at two chews a day.</p>
+</div>
+<ul class="checks"><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B3550" stroke-width="2.2" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Supports healthy digestion</li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B3550" stroke-width="2.2" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Helps keep gut flora in balance</li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B3550" stroke-width="2.2" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>One to four chews a day, by weight</li></ul>
+<p class="ph" style="font-size:14px">[Benefit wording to be confirmed with the manufacturer]</p>
+<p class="desc">Each chew combines Bacillus velezensis, a live gut-flora culture, with prebiotic inulin, psyllium husk and pumpkin and squash seeds. It’s designed to support healthy digestion, and most dogs treat it as a treat.</p>
+<dl class="facts" style="margin:0"><div><dt>Contents</dt><dd>60 soft chews</dd></div><div><dt>Net weight</dt><dd>120 g ℮</dd></div><div><dt>Lasts</dt><dd>30 days*</dd></div><div><dt>For</dt><dd>Dogs 12 wks+</dd></div></dl>
 <div class="acc">
 <details><summary><span>Composition &amp; additives</span><svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><p><b>Composition:</b> Tapioca starch, gram flour, glycerine, refined rapeseed oil, yeast products, potato starch, beta glucans, inulin, sugars, psyllium husk powder, pumpkin and squash seeds, crude lecithins, vegetal carbon, minerals, vegetable derivatives.</p><p><b>Additives (per kg):</b> Zootechnical additives: 4b1820 Bacillus velezensis DSM 15544 7.50 × 10¹¹ CFU.</p></details>
 <details><summary><span>Analytical constituents</span><svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><p>Crude protein 11.5% · Crude fat 13.3% · Crude fibre 0.6% · Crude ash 3.1% · Moisture 14%.</p></details>
@@ -223,6 +225,24 @@ document.querySelectorAll('[data-gallery]').forEach(function(g){
   function update(){ var on=pastProduct&&!footerVisible; bar.classList.toggle('is-on',on); bar.setAttribute('aria-hidden',on?'false':'true'); bar.querySelector('a').tabIndex=on?0:-1; }
   new IntersectionObserver(function(e){ var r=e[0]; pastProduct=!r.isIntersecting&&r.boundingClientRect.top<0; update(); }).observe(prod);
   new IntersectionObserver(function(e){ footerVisible=e[0].isIntersecting; update(); }).observe(foot);
+})();
+</script>
+<script>
+(function(){
+  var hdr=document.querySelector('.hdr');
+  function target(){
+    // phones: land on the product title so the options and Add to bag are on screen
+    return window.matchMedia('(max-width: 760px)').matches ? document.querySelector('.pinfo') : document.getElementById('product');
+  }
+  document.querySelectorAll('a[href="#product"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      var el=target(), gap=window.matchMedia('(max-width: 760px)').matches?12:0;
+      var y=el.getBoundingClientRect().top+window.scrollY-hdr.offsetHeight-gap;
+      window.scrollTo({top:y,behavior:'smooth'});
+      history.replaceState(null,'','#product');
+    });
+  });
 })();
 </script>
 </body>
