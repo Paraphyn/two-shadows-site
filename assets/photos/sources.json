@@ -46,5 +46,21 @@
   "ugc-jackrussell": {
     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FRJEjsdRgZ1CLDq9aAwBOjlKSj/hf_20261124_011943_1ace047b-2c3e-4f67-9739-49a5ca3a3faa.png",
     "max": 1000
+  },
+  "pdp-production": {
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FRJEjsdRgZ1CLDq9aAwBOjlKSj/hf_20261124_013730_c666758d-448f-4d61-a78b-f3b121770a3f.png",
+    "max": 1400
+  },
+  "pdp-sussex": {
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FRJEjsdRgZ1CLDq9aAwBOjlKSj/hf_20261124_013730_ca0b52d6-ce9d-487e-b391-f5d7fa1f653b.png",
+    "max": 1400
+  },
+  "pdp-sleep": {
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FRJEjsdRgZ1CLDq9aAwBOjlKSj/hf_20261124_013730_57f438b9-9f42-420c-b9d4-c7265beb6473.png",
+    "max": 1400
+  },
+  "pdp-walk": {
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FRJEjsdRgZ1CLDq9aAwBOjlKSj/hf_20261124_013730_16504db0-3732-43dd-a1fa-80a898e36011.png",
+    "max": 1400
   }
 }
