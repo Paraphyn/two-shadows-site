@@ -1,5 +1,5 @@
 # Downloads the generated photos listed in assets/photos/sources.json,
-# converts them to web-sized JPGs and commits them to the repo.
+# converts them to web-sized WebP files and commits them to the repo.
 name: Fetch photos
 on:
   push:
@@ -22,14 +22,17 @@ jobs:
           from PIL import Image
           src = json.load(open('assets/photos/sources.json'))
           for name, spec in src.items():
-              out = f'assets/photos/{name}.jpg'
-              if os.path.exists(out):
+              out = f'assets/photos/{name}.webp'
+              if os.path.exists(out) or os.path.exists(f'assets/photos/{name}.jpg'):
                   continue
               data = urllib.request.urlopen(spec['url']).read()
               im = Image.open(io.BytesIO(data)).convert('RGB')
               im.thumbnail((spec.get('max', 1600),) * 2, Image.LANCZOS)
-              im.save(out, quality=82, optimize=True, progressive=True)
+              im.save(out, 'WEBP', quality=78, method=6)
               print('saved', out, im.size)
+              if name.startswith(('pdp-', 'ing-chews')):
+                  t = im.copy(); t.thumbnail((240, 240), Image.LANCZOS)
+                  t.save(f'assets/photos/{name}-thumb.webp', 'WEBP', quality=78, method=6)
           PY
       - name: Commit
         run: |

@@ -11,9 +11,140 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#FFFFFF">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Sans+Condensed:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@500;600;700&display=swap">
+<!-- Canonical and og URLs point at the review deployment; switch to the production domain at launch -->
+<link rel="canonical" href="https://two-shadows-site.vercel.app/">
+<meta property="og:type" content="product">
+<meta property="og:site_name" content="Two Shadows">
+<meta property="og:title" content="Two Shadows — Gut &amp; Digestion soft chews for dogs">
+<meta property="og:description" content="UK-made soft chews with a live gut-flora culture, designed to support healthy digestion.">
+<meta property="og:url" content="https://two-shadows-site.vercel.app/">
+<meta property="og:image" content="https://two-shadows-site.vercel.app/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Two Shadows Gut &amp; Digestion soft chews: Good days start with a happy gut">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="assets/fonts/anton-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/plex-condensed-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" type="image/webp" href="assets/photos/hero.webp" imagesrcset="assets/photos/hero-560.webp 560w, assets/photos/hero.webp 896w" imagesizes="(max-width: 760px) 100vw, 50vw" fetchpriority="high">
 <link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://two-shadows-site.vercel.app/#org",
+      "name": "Two Shadows",
+      "url": "https://two-shadows-site.vercel.app/",
+      "logo": "https://two-shadows-site.vercel.app/brand/two-shadows-stacked-512.png",
+      "email": "info@twoshadows.co.uk",
+      "areaServed": "GB"
+    },
+    {
+      "@type": "Product",
+      "@id": "https://two-shadows-site.vercel.app/#product",
+      "name": "Gut & Digestion soft chews for dogs",
+      "description": "A complementary feed for dogs over 12 weeks: 60 soft chews with Bacillus velezensis DSM 15544, a live gut-flora culture, plus prebiotic inulin, psyllium husk and pumpkin and squash seeds, designed to support healthy digestion.",
+      "brand": { "@type": "Brand", "name": "Two Shadows" },
+      "manufacturer": { "@id": "https://two-shadows-site.vercel.app/#org" },
+      "image": [
+        "https://two-shadows-site.vercel.app/assets/og-image.jpg",
+        "https://two-shadows-site.vercel.app/assets/photos/ing-chews.webp"
+      ],
+      "category": "Dog supplements",
+      "countryOfOrigin": "GB",
+      "weight": { "@type": "QuantitativeValue", "value": 120, "unitCode": "GRM" },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://two-shadows-site.vercel.app/#product",
+        "price": "22.99",
+        "priceCurrency": "GBP",
+        "itemCondition": "https://schema.org/NewCondition",
+        "seller": { "@id": "https://two-shadows-site.vercel.app/#org" }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://two-shadows-site.vercel.app/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are Gut & Digestion chews?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Soft chews for dogs made with Bacillus velezensis, a live gut-flora culture, plus prebiotic inulin and natural fibres. They’re a complementary feed designed to support healthy digestion."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Bacillus velezensis?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A naturally occurring, spore-forming bacterium. The strain we use, DSM 15544, is listed as zootechnical additive 4b1820, a gut flora stabiliser: it helps keep the good bacteria in your dog’s gut in balance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it contain probiotics?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Bacillus velezensis DSM 15544 is listed as a zootechnical additive at 7.50 × 10¹¹ CFU per kg."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why a soft chew?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most dogs take it like a treat, so there’s no powder to mix and no tablet to hide in food. That makes the daily routine easier to keep up."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many should I give?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on weight: under 10 kg, one chew a day; 10–30 kg, two; 30–45 kg, three; over 45 kg, four. The guide is on every jar. Not sure? Email us your dog’s weight."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it right for my dog?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Gut & Digestion is for dogs over 12 weeks old. If your dog is unwell, on medication or has a health condition, have a word with your vet first."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How soon will I notice a difference?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Every dog is different. Give it four to six weeks of daily use."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does a jar last?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There are 60 chews in a jar: 60 days for a small dog, 30 days for a 10–30 kg dog, 20 days at three a day and 15 days at four."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where is it made?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In the UK, in a GB-registered feed facility."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="announce"><svg width="20" height="10" viewBox="0 0 60 30" aria-hidden="true"><clipPath id="af"><rect width="60" height="30"/></clipPath><g clip-path="url(#af)"><rect width="60" height="30" fill="#012169"/><path d="M0 0L60 30M60 0L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0L60 30M60 0L0 30" stroke="#C8102E" stroke-width="2"/><path d="M30 0V30M0 15H60" stroke="#fff" stroke-width="10"/><path d="M30 0V30M0 15H60" stroke="#C8102E" stroke-width="6"/></g></svg><span>Made in the UK</span><span class="dot">·</span><span>Free UK delivery over <span class="ph">[£XX]</span></span></div>
@@ -34,7 +165,7 @@
 <div class="hero-cta"><a class="btn" href="#product">Shop Gut &amp; Digestion</a><a class="tlink" href="#inside">What’s inside</a></div>
 <div class="hero-note"><span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B3550" stroke-width="2.2" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Made in the UK</span><span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B3550" stroke-width="2.2" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>60 chews per jar</span><span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B3550" stroke-width="2.2" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>For dogs 12 weeks+</span></div>
 </div>
-<div class="hero-img"><img src="assets/photos/hero.jpg" alt="A man sitting on the floor of a bright flat with his German Shepherd leaning against him" fetchpriority="high"></div>
+<div class="hero-img"><img src="assets/photos/hero.webp" srcset="assets/photos/hero-560.webp 560w, assets/photos/hero.webp 896w" sizes="(max-width: 760px) 100vw, 50vw" width="896" height="1120" alt="A man sitting on the floor of a bright flat with his German Shepherd leaning against him" fetchpriority="high"></div>
 </div>
 </section>
 
@@ -55,15 +186,15 @@
 <div style="position:absolute;left:16px;right:16px;bottom:9px;display:flex;justify-content:space-between;align-items:center;color:#FFFBF8"><span style="background:#FFFBF8;color:var(--pack);border-radius:999px;padding:3px 7px;font-weight:700;font-size:8px">60 soft chews</span><span style="font-weight:600;font-size:8.5px">All dogs</span><span style="font-weight:600;font-size:15px">120 g</span></div>
 <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.22) 0%,rgba(0,0,0,0) 22%,rgba(255,255,255,.1) 42%,rgba(0,0,0,0) 62%,rgba(0,0,0,.26) 100%)"></div>
 </div></div><figcaption><b>Gut &amp; Digestion</b><span>60 soft chews · 120 g · made in the UK</span></figcaption></figure>
-<figure class="slide" data-slide="1" hidden><img src="assets/photos/pdp-production.jpg" alt="A technician inspecting soft chews on a production line"><figcaption><b>Made with care</b><span>Produced in a GB-registered, GMP-certified feed facility in England.</span></figcaption></figure>
-<figure class="slide" data-slide="2" hidden><img src="assets/photos/pdp-sussex.jpg" alt="Green downs and white cliffs on the East Sussex coast" loading="lazy"><figcaption><b>Made in Britain</b><span>From the East Sussex coast to your kitchen.</span></figcaption></figure>
-<figure class="slide" data-slide="3" hidden><img src="assets/photos/pdp-sleep.jpg" alt="A Beagle asleep on a rug after its meal" loading="lazy"><figcaption><b>A treat, not a chore</b><span>Made to taste like a treat, so the daily routine is easy to keep.</span></figcaption></figure>
-<figure class="slide" data-slide="4" hidden><img src="assets/photos/pdp-walk.jpg" alt="A woman walking her Springer Spaniel on a countryside path" loading="lazy"><figcaption><b>Peace of mind for you</b><span>One small habit that supports the gut behind every good walk.</span></figcaption></figure>
+<figure class="slide" data-slide="1" hidden><img src="assets/photos/pdp-production.webp" width="1024" height="1024" alt="A technician inspecting soft chews on a production line" loading="lazy"><figcaption><b>Made with care</b><span>Produced in a GB-registered, GMP-certified feed facility in England.</span></figcaption></figure>
+<figure class="slide" data-slide="2" hidden><img src="assets/photos/pdp-sussex.webp" width="1024" height="1024" alt="Green downs and white cliffs on the East Sussex coast" loading="lazy"><figcaption><b>Made in Britain</b><span>From the East Sussex coast to your kitchen.</span></figcaption></figure>
+<figure class="slide" data-slide="3" hidden><img src="assets/photos/pdp-sleep.webp" width="1024" height="1024" alt="A Beagle asleep on a rug after its meal" loading="lazy"><figcaption><b>A treat, not a chore</b><span>Made to taste like a treat, so the daily routine is easy to keep.</span></figcaption></figure>
+<figure class="slide" data-slide="4" hidden><img src="assets/photos/pdp-walk.webp" width="1024" height="1024" alt="A woman walking her Springer Spaniel on a countryside path" loading="lazy"><figcaption><b>Peace of mind for you</b><span>One small habit that supports the gut behind every good walk.</span></figcaption></figure>
 <button type="button" class="g-nav g-prev" aria-label="Previous image"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></button>
 <button type="button" class="g-nav g-next" aria-label="Next image"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
 </div>
 <div class="gallery-thumbs">
-<button type="button" class="thumb" data-go="0" aria-label="Jar" aria-current="true"><div class="mini" role="img" aria-label="Two Shadows Gut &amp; Digestion jar" style="width:280px;height:330px;position:relative;font-family:Montserrat,Arial,sans-serif;flex:none">
+<button type="button" class="thumb" data-go="0" aria-current="true"><span class="vh">Show image: the Gut &amp; Digestion jar</span><div class="mini" aria-hidden="true" style="width:280px;height:330px;position:relative;font-family:Montserrat,Arial,sans-serif;flex:none">
 <div style="position:absolute;left:14px;top:300px;width:252px;height:22px;border-radius:50%;background:rgba(78,17,49,.14);filter:blur(8px)"></div>
 <div style="position:absolute;left:22px;top:18px;width:236px;height:58px;border-radius:14px 14px 6px 6px;background:linear-gradient(90deg,#E9E4E2 0%,#fff 38%,#fff 55%,#DDD6D4 100%)"></div>
 <div style="position:absolute;left:22px;top:70px;width:236px;height:3px;background:rgba(78,17,49,.1)"></div>
@@ -75,10 +206,10 @@
 <div style="position:absolute;left:16px;right:16px;bottom:9px;display:flex;justify-content:space-between;align-items:center;color:#FFFBF8"><span style="background:#FFFBF8;color:var(--pack);border-radius:999px;padding:3px 7px;font-weight:700;font-size:8px">60 soft chews</span><span style="font-weight:600;font-size:8.5px">All dogs</span><span style="font-weight:600;font-size:15px">120 g</span></div>
 <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.22) 0%,rgba(0,0,0,0) 22%,rgba(255,255,255,.1) 42%,rgba(0,0,0,0) 62%,rgba(0,0,0,.26) 100%)"></div>
 </div></div></button>
-<button type="button" class="thumb" data-go="1" aria-label="Production"><img src="assets/photos/pdp-production.jpg" alt=""></button>
-<button type="button" class="thumb" data-go="2" aria-label="Made in Britain"><img src="assets/photos/pdp-sussex.jpg" alt=""></button>
-<button type="button" class="thumb" data-go="3" aria-label="Happy dog"><img src="assets/photos/pdp-sleep.jpg" alt=""></button>
-<button type="button" class="thumb" data-go="4" aria-label="Happy owner"><img src="assets/photos/pdp-walk.jpg" alt=""></button>
+<button type="button" class="thumb" data-go="1"><img src="assets/photos/pdp-production-thumb.webp" srcset="assets/photos/pdp-production-thumb-120.webp 120w, assets/photos/pdp-production-thumb.webp 240w" sizes="(max-width: 760px) 64px, 112px" width="240" height="240" alt="Show image: production line" loading="lazy"></button>
+<button type="button" class="thumb" data-go="2"><img src="assets/photos/pdp-sussex-thumb.webp" srcset="assets/photos/pdp-sussex-thumb-120.webp 120w, assets/photos/pdp-sussex-thumb.webp 240w" sizes="(max-width: 760px) 64px, 112px" width="240" height="240" alt="Show image: the East Sussex coast" loading="lazy"></button>
+<button type="button" class="thumb" data-go="3"><img src="assets/photos/pdp-sleep-thumb.webp" srcset="assets/photos/pdp-sleep-thumb-120.webp 120w, assets/photos/pdp-sleep-thumb.webp 240w" sizes="(max-width: 760px) 64px, 112px" width="240" height="240" alt="Show image: a Beagle asleep after its meal" loading="lazy"></button>
+<button type="button" class="thumb" data-go="4"><img src="assets/photos/pdp-walk-thumb.webp" srcset="assets/photos/pdp-walk-thumb-120.webp 120w, assets/photos/pdp-walk-thumb.webp 240w" sizes="(max-width: 760px) 64px, 112px" width="240" height="240" alt="Show image: an owner walking her Springer Spaniel" loading="lazy"></button>
 </div>
 <p class="ph" style="font-size:13px;margin-top:10px">[Production photo is illustrative. Replace with real photos and confirm the GMP wording with the manufacturer]</p>
 </div>
@@ -93,6 +224,16 @@
 <label class="opt"><input type="radio" name="buy" data-price="£22.99" checked><span class="t">One-time purchase</span><span class="p">£22.99</span></label>
 </fieldset>
 <button type="button" class="btn add">Add to bag&nbsp;·&nbsp;<span data-add-price>£22.99</span></button>
+<ul class="assure" aria-label="Buying with confidence">
+<li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Secure checkout</li>
+<li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.3-5.6M4 4v4h4"/></svg>Subscriptions: cancel online anytime</li>
+</ul>
+<ul class="pay" aria-label="Payment methods (to be confirmed)"><li>Visa</li><li>Mastercard</li><li>Amex</li><li>Apple Pay</li><li>Google Pay</li><li>PayPal</li><li>Shop Pay</li></ul>
+<div class="promise">
+<div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6B3550" stroke-width="1.8" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><p><b><span class="ph">[XX]</span>-day Happy Gut Guarantee</b><span>Not happy with your first jar? We’ll refund it, even if it’s opened. <span class="ph">[terms to be confirmed]</span></span></p></div>
+<div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6B3550" stroke-width="1.8" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg><p><b>Dispatched within <span class="ph">[X]</span> working days</b><span>Free UK delivery over <span class="ph">[£XX]</span>, otherwise <span class="ph">[£X.XX]</span>.</span></p></div>
+</div>
+<p class="ph" style="font-size:13px">[Payment icons are a text stand-in; the official marks come from the checkout platform once methods are confirmed]</p>
 <p class="small">*One jar lasts 30 days for a 10–30 kg dog at two chews a day.</p>
 </div>
 <ul class="checks"><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B3550" stroke-width="2.2" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Supports healthy digestion</li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B3550" stroke-width="2.2" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Helps keep gut flora in balance</li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B3550" stroke-width="2.2" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>One to four chews a day, by weight</li></ul>
@@ -102,7 +243,7 @@
 <div class="acc">
 <details><summary><span>Composition &amp; additives</span><svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><p><b>Composition:</b> Tapioca starch, gram flour, glycerine, refined rapeseed oil, yeast products, potato starch, beta glucans, inulin, sugars, psyllium husk powder, pumpkin and squash seeds, crude lecithins, vegetal carbon, minerals, vegetable derivatives.</p><p><b>Additives (per kg):</b> Zootechnical additives: 4b1820 Bacillus velezensis DSM 15544 7.50 × 10¹¹ CFU.</p></details>
 <details><summary><span>Analytical constituents</span><svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><p>Crude protein 11.5% · Crude fat 13.3% · Crude fibre 0.6% · Crude ash 3.1% · Moisture 14%.</p></details>
-<details><summary><span>Feeding guide</span><svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><p>Under 10 kg: 1 chew · 10–30 kg: 2 · 30–45 kg: 3 · Over 45 kg: 4 a day. A complementary feed for dogs over 12 weeks of age. Allow 4–6 weeks for optimum results.</p></details>
+<details><summary><span>Feeding guide</span><svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><p>Under 10 kg: 1 chew · 10–30 kg: 2 · 30–45 kg: 3 · Over 45 kg: 4 a day. A complementary feed for dogs over 12 weeks of age. Allow 4–6 weeks for optimum results.</p><p class="help-note"><b>Not sure how many?</b> <a class="tlink" href="mailto:info@twoshadows.co.uk?subject=How%20many%20chews%20for%20my%20dog%3F&amp;body=My%20dog%E2%80%99s%20weight%20(kg)%3A%20%0AAge%3A%20%0ABreed%3A%20">Email us your dog’s weight</a> and we’ll tell you.</p></details>
 <details><summary><span>Delivery &amp; returns</span><svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><p class="ph">[Delivery times, costs and returns policy to be added]</p></details>
 </div>
 </div>
@@ -124,15 +265,28 @@
 <div class="wrap">
 <div class="sec-head"><div><div class="kicker">What’s inside</div><h2 class="h2" id="ing">Four ingredients doing the work</h2></div><p class="lead">The key ingredients behind our first chew. The full composition is printed on every jar.</p></div>
 <div class="ing">
-<figure><div class="ph-img"><img src="assets/photos/ing-chews.jpg" alt="Two Shadows soft chews, one broken in half" loading="lazy"></div><h3><i>Bacillus velezensis</i></h3><p>A live gut-flora culture that helps support a balanced digestive system.</p></figure><figure><div class="ph-img"><img src="assets/photos/ing-inulin.jpg" alt="Inulin powder on a wooden spoon next to chicory root" loading="lazy"></div><h3>Inulin</h3><p>A prebiotic fibre from chicory root that feeds the good bacteria already in the gut.</p></figure><figure><div class="ph-img"><img src="assets/photos/ing-psyllium.jpg" alt="Psyllium husk in a ceramic bowl" loading="lazy"></div><h3>Psyllium husk</h3><p>A gentle natural fibre for everyday digestive comfort.</p></figure><figure><div class="ph-img"><img src="assets/photos/ing-pumpkin.jpg" alt="Pumpkin seeds beside a halved squash" loading="lazy"></div><h3>Pumpkin &amp; squash seeds</h3><p>A familiar, wholesome source of fibre and natural oils.</p></figure>
+<figure><div class="ph-img"><img src="assets/photos/ing-chews.webp" width="1000" height="1000" alt="Two Shadows soft chews, one broken in half" loading="lazy"></div><h3><i>Bacillus velezensis</i></h3><p>A live gut-flora culture that helps support a balanced digestive system.</p></figure><figure><div class="ph-img"><img src="assets/photos/ing-inulin.webp" width="1000" height="1000" alt="Inulin powder on a wooden spoon next to chicory root" loading="lazy"></div><h3>Inulin</h3><p>A prebiotic fibre from chicory root that feeds the good bacteria already in the gut.</p></figure><figure><div class="ph-img"><img src="assets/photos/ing-psyllium.webp" width="1000" height="1000" alt="Psyllium husk in a ceramic bowl" loading="lazy"></div><h3>Psyllium husk</h3><p>A gentle natural fibre for everyday digestive comfort.</p></figure><figure><div class="ph-img"><img src="assets/photos/ing-pumpkin.webp" width="1000" height="1000" alt="Pumpkin seeds beside a halved squash" loading="lazy"></div><h3>Pumpkin &amp; squash seeds</h3><p>A familiar, wholesome source of fibre and natural oils.</p></figure>
 </div>
 <p class="foot-note">Bacillus velezensis is listed as a zootechnical additive (4b1820, 7.50 × 10¹¹ CFU per kg). <a href="#product" class="tlink">See full composition</a></p>
+<div class="strain" aria-labelledby="ws">
+<div class="strain-head">
+<div class="kicker">Why this strain</div>
+<h3 class="h3" id="ws"><i>Bacillus velezensis</i> DSM&nbsp;15544</h3>
+<p>Not all gut-flora cultures are alike. We chose one specific, catalogued strain, so you know exactly what’s in every chew.</p>
+</div>
+<dl class="strain-list">
+<div><dt>A named, deposited strain</dt><dd>DSM 15544 is its reference number in the German collection of microorganisms (DSMZ), so the culture can be traced and identified.</dd></div>
+<div><dt>Spore-forming by nature</dt><dd>Bacillus cultures form spores, a dormant, protective state, which is why they’re widely used in shelf-stable feeds.<span class="ph">[Survival through production and storage: confirm with manufacturer]</span></dd></div>
+<div><dt>Listed on every jar</dt><dd>It appears in the composition as zootechnical additive 4b1820, at 7.50 × 10¹¹ CFU per kg.</dd></div>
+<div><dt>In every chew</dt><dd><span class="ph">[X] billion cultures per chew, guaranteed to the end of shelf life: confirm figure with manufacturer]</span></dd></div>
+</dl>
+</div>
 </div>
 </section>
 
 <section class="sec story" id="story" aria-labelledby="st">
 <div class="wrap story-in">
-<div class="story-img"><img src="assets/photos/story-frenchie.jpg" alt="A French Bulldog on a linen sofa with its owner’s hand on its back" loading="lazy"></div>
+<div class="story-img"><img src="assets/photos/story-frenchie.webp" width="1168" height="880" alt="A French Bulldog on a linen sofa with its owner’s hand on its back" loading="lazy"></div>
 <div>
 <div class="kicker">Our story</div>
 <h2 class="h2" id="st" style="margin-bottom:24px">Two shadows, one bond</h2>
@@ -155,17 +309,23 @@
 </ol>
 <a href="#product" class="btn btn-ghost" style="margin-top:32px">Shop Gut &amp; Digestion</a>
 </div>
-<div class="how-img"><img src="assets/photos/ugc-golden.jpg" alt="A Golden Retriever taking a soft chew from an open hand in a sunny kitchen" loading="lazy"></div>
+<div class="how-img"><img src="assets/photos/how-golden.webp" width="752" height="1344" alt="A Golden Retriever taking a soft chew from an open hand in a sunny kitchen" loading="lazy"></div>
 </div>
 </section>
 
 <section class="sec" aria-labelledby="sv">
 <div class="wrap">
-<div class="sec-head"><div><div class="kicker">#twoshadowsdogs</div><h2 class="h2" id="sv">Short videos from real routines</h2><p class="lead lead-line">Tag your clips with #twoshadowsdogs and we may feature them here.</p><div class="socials"><a class="social" href="#" aria-label="Two Shadows on Instagram (link to be added)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>Instagram</a><a class="social" href="#" aria-label="Two Shadows on TikTok (link to be added)"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 3c.3 2.3 1.6 3.8 3.9 4v3.1c-1.4.1-2.7-.3-3.9-1.1v5.9c0 3.6-2.5 6.1-5.9 6.1-3.3 0-5.8-2.6-5.6-5.9.2-3.1 2.9-5.4 6.1-5.1v3.2c-.4-.1-.8-.2-1.2-.1-1.3.2-2.2 1.3-2.1 2.6.1 1.3 1.2 2.3 2.5 2.2 1.4 0 2.4-1.1 2.4-2.6V3h3.8z"/></svg>TikTok</a><span class="ph" style="font-size:13px">[account links to be added]</span></div></div></div>
-<div class="clips">
-<div class="clip"><img src="assets/photos/ugc-collie.jpg" alt="Border Collie" ><span class="play"><svg width="12" height="12" viewBox="0 0 24 24" fill="#6B3550" aria-hidden="true"><path d="M7 4l14 8-14 8z"/></svg></span><div class="meta"><span>Waiting very patiently</span><small>Border Collie</small></div></div><div class="clip"><img src="assets/photos/ugc-jackrussell.jpg" alt="Jack Russell" ><span class="play"><svg width="12" height="12" viewBox="0 0 24 24" fill="#6B3550" aria-hidden="true"><path d="M7 4l14 8-14 8z"/></svg></span><div class="meta"><span>Gone in a second</span><small>Jack Russell</small></div></div><div class="clip"><img src="assets/photos/ugc-lab.jpg" alt="Labrador" ><span class="play"><svg width="12" height="12" viewBox="0 0 24 24" fill="#6B3550" aria-hidden="true"><path d="M7 4l14 8-14 8z"/></svg></span><div class="meta"><span>Breakfast, chew, walk</span><small>Labrador</small></div></div><div class="clip"><img src="assets/photos/ugc-dachshund.jpg" alt="Dachshund" ><span class="play"><svg width="12" height="12" viewBox="0 0 24 24" fill="#6B3550" aria-hidden="true"><path d="M7 4l14 8-14 8z"/></svg></span><div class="meta"><span>Afternoon off</span><small>Dachshund</small></div></div><div class="clip"><img src="assets/photos/ugc-cockapoo.jpg" alt="Cockapoo" ><span class="play"><svg width="12" height="12" viewBox="0 0 24 24" fill="#6B3550" aria-hidden="true"><path d="M7 4l14 8-14 8z"/></svg></span><div class="meta"><span>Saturday in the park</span><small>Cockapoo</small></div></div>
+<div class="share">
+<div class="share-txt">
+<div class="kicker">#twoshadowsdogs</div>
+<h2 class="h2" id="sv">Share your dog’s routine</h2>
+<p class="lead">Breakfast, chew, walk: we’d love to see how it looks in your home. Post a clip, tag <b>#twoshadowsdogs</b>, and with your permission we may feature it here.</p>
 </div>
-<p class="example-note ph">[Example images. Replace with real customer clips before launch.]</p>
+<div class="share-act">
+<div class="socials"><a class="social" href="#" aria-label="Two Shadows on Instagram (link to be added)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>Instagram</a><a class="social" href="#" aria-label="Two Shadows on TikTok (link to be added)"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 3c.3 2.3 1.6 3.8 3.9 4v3.1c-1.4.1-2.7-.3-3.9-1.1v5.9c0 3.6-2.5 6.1-5.9 6.1-3.3 0-5.8-2.6-5.6-5.9.2-3.1 2.9-5.4 6.1-5.1v3.2c-.4-.1-.8-.2-1.2-.1-1.3.2-2.2 1.3-2.1 2.6.1 1.3 1.2 2.3 2.5 2.2 1.4 0 2.4-1.1 2.4-2.6V3h3.8z"/></svg>TikTok</a></div>
+<p class="ph" style="font-size:13px">[account links to be added]</p>
+</div>
+</div>
 </div>
 </section>
 
@@ -174,12 +334,22 @@
 <div><div class="kicker">FAQ</div><h2 class="h2" id="fq" style="margin-bottom:20px">Good questions</h2><p class="lead" style="margin-bottom:20px">Can’t find what you need? We’re happy to help.</p><a class="tlink" href="mailto:info@twoshadows.co.uk">Get in touch</a></div>
 <div class="acc">
 <details><summary><span>What are Gut &amp; Digestion chews?</span><svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><p>Soft chews for dogs made with Bacillus velezensis, a live gut-flora culture, plus prebiotic inulin and natural fibres. They’re a complementary feed designed to support healthy digestion.</p></details>
-<details><summary><span>How many should I give?</span><svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><p>It depends on weight: under 10 kg, one chew a day; 10–30 kg, two; 30–45 kg, three; over 45 kg, four. The guide is on every jar.</p></details>
-<details><summary><span>Is it right for my dog?</span><svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><p>Gut &amp; Digestion is for dogs over 12 weeks old. If your dog is unwell, on medication or has a health condition, have a word with your vet first.</p></details>
+<details><summary><span>What is Bacillus velezensis?</span><svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><p>A naturally occurring, spore-forming bacterium. The strain we use, DSM 15544, is listed as zootechnical additive 4b1820, a gut flora stabiliser: it helps keep the good bacteria in your dog’s gut in balance.</p></details>
 <details><summary><span>Does it contain probiotics?</span><svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><p>Yes. Bacillus velezensis DSM 15544 is listed as a zootechnical additive at 7.50 × 10¹¹ CFU per kg.</p></details>
+<details><summary><span>Why a soft chew?</span><svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><p>Most dogs take it like a treat, so there’s no powder to mix and no tablet to hide in food. That makes the daily routine easier to keep up.</p></details>
+<details><summary><span>How many should I give?</span><svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><p>It depends on weight: under 10 kg, one chew a day; 10–30 kg, two; 30–45 kg, three; over 45 kg, four. The guide is on every jar. Not sure? <a class="tlink" href="mailto:info@twoshadows.co.uk?subject=How%20many%20chews%20for%20my%20dog%3F">Email us your dog’s weight</a>.</p></details>
+<details><summary><span>Is it right for my dog?</span><svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><p>Gut &amp; Digestion is for dogs over 12 weeks old. If your dog is unwell, on medication or has a health condition, have a word with your vet first.</p></details>
+<details><summary><span>Can puppies, pregnant or nursing dogs have it?</span><svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><p><span class="draft">Draft · confirm with manufacturer</span> Puppies can have it from 12 weeks of age, at the amount for their weight. If your dog is pregnant or nursing, ask your vet before starting.</p></details>
+<details><summary><span>Is it safe? Are there any side effects?</span><svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><p><span class="draft">Draft · confirm with manufacturer</span> It’s a complementary feed made in a GB-registered feed facility, using an additive authorised for dogs. As with any change to the diet, start at the recommended amount. If you notice anything unusual, stop and speak to your vet.</p></details>
+<details><summary><span>My dog is on medication or antibiotics. Can they still have it?</span><svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><p><span class="draft">Draft · confirm with manufacturer</span> Check with your vet before starting, and follow their advice on timing alongside any course of medication.</p></details>
+<details><summary><span>Does it contain common allergens?</span><svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><p><span class="draft">Draft · confirm with manufacturer</span> The full composition is on every jar and in the product details above. The chews include gram flour (chickpea), yeast products and pumpkin and squash seeds. <span class="ph">[Allergen and cross-contact information to be confirmed]</span></p></details>
 <details><summary><span>How soon will I notice a difference?</span><svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><p>Every dog is different. Give it four to six weeks of daily use.</p></details>
-<details><summary><span>Where is it made?</span><svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><p>In the UK, in a GB-registered feed facility.</p></details>
+<details><summary><span>What if my dog doesn’t like it?</span><svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><p>Most dogs treat it as a treat, but every dog is different. Try breaking a chew in half or giving it with a meal. If it still doesn’t work out, the <span class="ph">[XX]</span>-day Happy Gut Guarantee covers your first jar. <span class="ph">[Terms to be confirmed]</span></p></details>
 <details><summary><span>How long does a jar last?</span><svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><p>There are 60 chews in a jar: 60 days for a small dog, 30 days for a 10–30 kg dog, 20 days at three a day and 15 days at four.</p></details>
+<details><summary><span>How should I store it?</span><svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><p><span class="draft">Draft · confirm with manufacturer</span> Keep the lid closed and store the jar in a cool, dry place out of direct sunlight. Use within <span class="ph">[X]</span> weeks of opening.</p></details>
+<details><summary><span>How does the subscription work, and how do I cancel?</span><svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><p>Choose Subscribe &amp; save and a jar arrives every <span class="ph">[X]</span> weeks for <span class="ph">[£PRICE]</span>. We’ll email you before each order. You can skip, pause or cancel online at any time. <span class="ph">[Subscription terms to be confirmed]</span></p></details>
+<details><summary><span>How much is delivery, and how long does it take?</span><svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><p>We deliver across the UK. Orders are dispatched within <span class="ph">[X]</span> working days. Delivery is <span class="ph">[£X.XX]</span>, or free over <span class="ph">[£XX]</span>. <span class="ph">[Carrier and times to be confirmed]</span></p></details>
+<details><summary><span>Where is it made?</span><svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><p>In the UK, in a GB-registered feed facility.</p></details>
 </div>
 </div>
 </section>
@@ -187,7 +357,7 @@
 
 <div class="stickybuy" id="stickybuy" aria-hidden="true">
 <div class="wrap stickybuy-in">
-<div class="sb-info"><span class="sb-thumb"><img src="assets/photos/ing-chews.jpg" alt=""></span><span><b>Gut &amp; Digestion</b><small>60 chews · £22.99</small></span></div>
+<div class="sb-info"><span class="sb-thumb"><img src="assets/photos/ing-chews-thumb.webp" srcset="assets/photos/ing-chews-thumb-120.webp 120w, assets/photos/ing-chews-thumb.webp 240w" sizes="(max-width: 760px) 64px, 112px" width="240" height="240" alt="Two Shadows soft chews" loading="lazy"></span><span><b>Gut &amp; Digestion</b><small>60 chews · £22.99</small></span></div>
 <a class="btn sb-btn" href="#product" tabindex="-1">Choose &amp; buy</a>
 </div>
 </div>
@@ -195,9 +365,9 @@
 <div class="wrap">
 <div class="foot-grid">
 <div><p class="foot-tag">For the love of a good dog.</p><p style="font-size:15px;color:var(--muted)">Made in the UK in a GB-registered feed facility.</p></div>
-<div><h4>Explore</h4><nav aria-label="Explore"><a href="#product">Gut &amp; Digestion</a><a href="#inside">What’s inside</a><a href="#story">Our story</a></nav></div>
-<div><h4>Help</h4><nav aria-label="Help"><a href="#faq">FAQ</a><a href="mailto:info@twoshadows.co.uk">Contact us</a></nav></div>
-<form onsubmit="return false"><h4><label for="em">Occasional good news</label></h4><div class="news"><input id="em" type="email" placeholder="Email address"><button type="submit">Sign up</button></div></form>
+<div><h2 class="foot-h">Explore</h2><nav aria-label="Explore"><a href="#product">Gut &amp; Digestion</a><a href="#inside">What’s inside</a><a href="#story">Our story</a></nav></div>
+<div><h2 class="foot-h">Help</h2><nav aria-label="Help"><a href="#faq">FAQ</a><a href="mailto:info@twoshadows.co.uk">Contact us</a></nav></div>
+<form onsubmit="return false"><h2 class="foot-h"><label for="em">Occasional good news</label></h2><div class="news"><input id="em" type="email" placeholder="Email address"><button type="submit">Sign up</button></div></form>
 </div>
 <svg class="wordmark" viewBox="0 12 542 90" role="img" aria-label="Two Shadows"><text x="0" y="100" font-family="Anton, Impact, sans-serif" font-size="100" fill="#6B3550">TWO SHADOWS</text></svg>
 <div class="legal"><span>© 2026 Two Shadows · Complementary feeds for dogs. Not veterinary medicines; not intended to diagnose, treat, cure or prevent any disease.</span><span>Privacy · Terms · United Kingdom · GBP £</span></div>

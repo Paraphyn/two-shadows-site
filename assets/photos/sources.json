@@ -1,8 +1,4 @@
 {
-  "ugc-golden": {
-    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FRJEjsdRgZ1CLDq9aAwBOjlKSj/hf_20261124_011847_23ed1784-3f5b-4141-873d-efeeba23ebc0.png",
-    "max": 1400
-  },
   "ing-inulin": {
     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FRJEjsdRgZ1CLDq9aAwBOjlKSj/hf_20261124_011846_abafd1b8-4c36-4786-bfb0-d4ce7973d75d.png",
     "max": 1000
@@ -15,22 +11,6 @@
     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FRJEjsdRgZ1CLDq9aAwBOjlKSj/hf_20261124_011847_01af36c3-3ccb-4405-8618-df10b8c14815.png",
     "max": 1000
   },
-  "ugc-collie": {
-    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FRJEjsdRgZ1CLDq9aAwBOjlKSj/hf_20261124_011846_d8c9e72f-49c5-4d0b-88c3-ec673e35952b.png",
-    "max": 1000
-  },
-  "ugc-lab": {
-    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FRJEjsdRgZ1CLDq9aAwBOjlKSj/hf_20261124_011847_b95f30a6-3916-4560-814c-fd48939dca11.png",
-    "max": 1000
-  },
-  "ugc-dachshund": {
-    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FRJEjsdRgZ1CLDq9aAwBOjlKSj/hf_20261124_011847_4aab1af4-194e-4430-9260-c20bf515776f.png",
-    "max": 1000
-  },
-  "ugc-cockapoo": {
-    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FRJEjsdRgZ1CLDq9aAwBOjlKSj/hf_20261124_011846_e8dd3594-cb68-41d1-a1f7-4ec416900c2a.png",
-    "max": 1000
-  },
   "hero": {
     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FRJEjsdRgZ1CLDq9aAwBOjlKSj/hf_20261124_011943_1ce119cb-6d7a-4cd6-b543-0772f0a657e3.png",
     "max": 1600
@@ -41,10 +21,6 @@
   },
   "ing-chews": {
     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FRJEjsdRgZ1CLDq9aAwBOjlKSj/hf_20261124_011943_e6355909-00a2-4b9b-a58a-87f7437e372f.png",
-    "max": 1000
-  },
-  "ugc-jackrussell": {
-    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FRJEjsdRgZ1CLDq9aAwBOjlKSj/hf_20261124_011943_1ace047b-2c3e-4f67-9739-49a5ca3a3faa.png",
     "max": 1000
   },
   "pdp-production": {
@@ -61,6 +37,10 @@
   },
   "pdp-walk": {
     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FRJEjsdRgZ1CLDq9aAwBOjlKSj/hf_20261124_013730_16504db0-3732-43dd-a1fa-80a898e36011.png",
+    "max": 1400
+  },
+  "how-golden": {
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FRJEjsdRgZ1CLDq9aAwBOjlKSj/hf_20261124_011847_23ed1784-3f5b-4141-873d-efeeba23ebc0.png",
     "max": 1400
   }
 }
