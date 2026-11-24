@@ -19,6 +19,7 @@ Page meta keys:
   scripts      list of partials appended before </body>
   hero_preload true to preload the hero image
 """
+import hashlib
 import html
 import json
 import os
@@ -139,6 +140,10 @@ def build(name):
 
     scripts = "\n".join("{{> %s}}" % s for s in meta.get("scripts", []))
     page = read("layout.html")
+    # cache-busting: the stylesheet URL changes whenever site.css changes
+    with open(os.path.join(ROOT, "assets", "site.css"), "rb") as f:
+        css_v = hashlib.sha1(f.read()).hexdigest()[:10]
+    page = page.replace('href="/assets/site.css"', f'href="/assets/site.css?v={css_v}"')
     for k, v in {"title": html.escape(meta["title"], quote=True), "description": html.escape(meta["description"], quote=True),
                  "url": url, "site": SITE, "og_type": meta.get("og_type", "website"), "preload": preload,
                  "jsonld": jsonld, "scripts": scripts}.items():
