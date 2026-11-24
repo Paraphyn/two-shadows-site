@@ -183,6 +183,12 @@
 </section>
 </main>
 
+<div class="stickybuy" id="stickybuy" aria-hidden="true">
+<div class="wrap stickybuy-in">
+<div class="sb-info"><span class="sb-thumb"><img src="assets/photos/ing-chews.jpg" alt=""></span><span><b>Gut &amp; Digestion</b><small>60 chews · <span class="ph">[£PRICE]</span></small></span></div>
+<a class="btn sb-btn" href="#product" tabindex="-1">Choose &amp; buy</a>
+</div>
+</div>
 <footer class="footer">
 <div class="wrap">
 <div class="foot-grid">
@@ -208,6 +214,16 @@ document.querySelectorAll('[data-gallery]').forEach(function(g){
   m.addEventListener('touchstart',function(e){ x0=e.touches[0].clientX; },{passive:true});
   m.addEventListener('touchend',function(e){ if(x0===null)return; var d=e.changedTouches[0].clientX-x0; if(Math.abs(d)>40) show(i+(d<0?1:-1)); x0=null; });
 });
+</script>
+<script>
+(function(){
+  var bar=document.getElementById('stickybuy'), prod=document.getElementById('product'), foot=document.querySelector('.footer');
+  if(!bar||!prod||!('IntersectionObserver' in window))return;
+  var pastProduct=false, footerVisible=false;
+  function update(){ var on=pastProduct&&!footerVisible; bar.classList.toggle('is-on',on); bar.setAttribute('aria-hidden',on?'false':'true'); bar.querySelector('a').tabIndex=on?0:-1; }
+  new IntersectionObserver(function(e){ var r=e[0]; pastProduct=!r.isIntersecting&&r.boundingClientRect.top<0; update(); }).observe(prod);
+  new IntersectionObserver(function(e){ footerVisible=e[0].isIntersecting; update(); }).observe(foot);
+})();
 </script>
 </body>
 </html>

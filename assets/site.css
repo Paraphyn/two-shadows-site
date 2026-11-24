@@ -18,6 +18,7 @@
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+[id] { scroll-margin-top: 72px; }
 body { margin: 0; background: var(--white); color: var(--ink); font-family: var(--body); font-size: 18px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
 img { display: block; max-width: 100%; }
 a { color: inherit; }
@@ -175,6 +176,20 @@ h1, h2, h3, p { margin: 0; }
 .wordmark { margin-top: 72px; width: 100%; height: auto; display: block; }
 .legal { margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(61,36,51,.15); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; font-size: 13px; color: var(--muted); }
 
+/* Sticky buy bar: appears once the product section is scrolled past */
+.stickybuy { position: fixed; z-index: 60; left: 0; right: 0; bottom: 0; background: rgba(255,255,255,.96); backdrop-filter: blur(10px); border-top: 1px solid var(--line); box-shadow: 0 -6px 24px rgba(61,36,51,.08); transform: translateY(110%); transition: transform .25s ease; }
+.stickybuy.is-on { transform: translateY(0); }
+.stickybuy-in { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 72px; }
+.sb-info { display: flex; align-items: center; gap: 14px; }
+.sb-info b { display: block; font: 600 16px var(--ui); }
+.sb-info small { font-size: 14px; color: var(--muted); }
+.sb-thumb { width: 48px; height: 48px; border-radius: 6px; overflow: hidden; background: var(--blush); flex: none; }
+.sb-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.sb-btn { min-height: 48px; padding: 0 28px; white-space: nowrap; flex: none; }
+.sb-info { min-width: 0; }
+.sb-info small { white-space: nowrap; }
+@media (prefers-reduced-motion: reduce) { .stickybuy { transition: none; } }
+
 /* Tablet */
 @media (max-width: 1024px) {
   .ing { grid-template-columns: repeat(2, 1fr); }
@@ -186,6 +201,7 @@ h1, h2, h3, p { margin: 0; }
 @media (max-width: 760px) {
   body { font-size: 17px; }
   .wrap { padding: 0 20px; }
+  [id] { scroll-margin-top: 96px; }
   .sec { padding: 72px 0; }
   .hdr-in { grid-template-columns: 1fr auto; min-height: 0; padding-top: 10px; }
   .logo { font-size: 14px; }
@@ -216,4 +232,9 @@ h1, h2, h3, p { margin: 0; }
   .clip { flex: 0 0 62%; scroll-snap-align: start; }
   .foot-grid { grid-template-columns: 1fr; }
   .wordmark { margin-top: 48px; }
+  .stickybuy-in { min-height: 64px; gap: 10px; }
+  .sb-thumb { width: 40px; height: 40px; }
+  .sb-info b { font-size: 14px; }
+  .sb-info small { font-size: 13px; }
+  .sb-btn { min-height: 44px; padding: 0 18px; font-size: 14px; }
 }
