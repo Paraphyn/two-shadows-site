@@ -1,0 +1,4 @@
+{
+  "_readme": "Add one entry per batch: \"BATCH-NUMBER\": \"/assets/coa/BATCH-NUMBER.pdf\", and put the PDF in this folder. Keys are matched in upper case with spaces removed.",
+  "batches": {}
+}

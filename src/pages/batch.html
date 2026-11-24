@@ -1,0 +1,40 @@
+<!--meta {"path": "/batch", "title": "Check your batch — Two Shadows", "description": "Enter the batch number from your jar to download its certificate of analysis.", "crumb": "Check your batch", "jsonld": ["breadcrumb"], "scripts": ["batch-script"]}-->
+<section class="page-hero">
+<div class="wrap">
+<div class="kicker">Check your batch</div>
+<h1>See what’s in your jar</h1>
+<p class="lead">Every jar carries a batch number. Enter it below to download that batch’s certificate of analysis (CoA).</p>
+<p class="notice ph">[Certificates of analysis per batch are being requested from the manufacturer. Until they arrive, any number shows the “not found” message.]</p>
+</div>
+</section>
+
+<section class="sec tint" style="padding-top:64px" aria-labelledby="bf">
+<div class="wrap two-col">
+<div>
+<h2 class="h2" id="bf" style="font-size:clamp(34px,3.6vw,46px)">Enter your batch number</h2>
+<p style="color:var(--muted);margin-top:16px">You’ll find it <span class="ph">[location on the jar, e.g. on the base next to the best-before date]</span>. It looks like <span class="ph">[format, e.g. TS-0000]</span>.</p>
+</div>
+<div>
+<form class="batch-form" id="batch-form" novalidate>
+<label class="vh" for="batch-no">Batch number</label>
+<input id="batch-no" name="batch" autocomplete="off" spellcheck="false" placeholder="Batch number" required>
+<button class="btn" type="submit">Check batch</button>
+</form>
+<div class="batch-result" id="batch-result" role="status" aria-live="polite"></div>
+</div>
+</div>
+</section>
+
+<section class="sec" aria-labelledby="wc">
+<div class="wrap two-col">
+<div>
+<div class="kicker">Good to know</div>
+<h2 class="h2" id="wc">What’s a certificate of analysis?</h2>
+</div>
+<div class="prose">
+<p>A certificate of analysis is a laboratory report for one production batch. It records what was measured in that batch and the result.</p>
+<p><span class="ph">[What each certificate covers, e.g. live culture count and microbiological checks: to be confirmed with the manufacturer]</span></p>
+<p>Questions about a batch? <a href="/contact">Contact us</a> with the batch number and we’ll help.</p>
+</div>
+</div>
+</section>

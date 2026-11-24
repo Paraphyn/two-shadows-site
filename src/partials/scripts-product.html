@@ -1,0 +1,47 @@
+<script>
+document.querySelectorAll('[data-gallery]').forEach(function(g){
+  var slides=g.querySelectorAll('.slide'), thumbs=g.querySelectorAll('.thumb'), i=0;
+  function show(n){ i=(n+slides.length)%slides.length;
+    slides.forEach(function(s,k){ s.hidden=k!==i; s.classList.toggle('is-active',k===i); });
+    thumbs.forEach(function(t,k){ t.setAttribute('aria-current', k===i?'true':'false'); }); }
+  thumbs.forEach(function(t){ t.addEventListener('click',function(){ show(+t.dataset.go); }); });
+  g.querySelector('.g-prev').addEventListener('click',function(){ show(i-1); });
+  g.querySelector('.g-next').addEventListener('click',function(){ show(i+1); });
+  var x0=null, m=g.querySelector('.gallery-main');
+  m.addEventListener('touchstart',function(e){ x0=e.touches[0].clientX; },{passive:true});
+  m.addEventListener('touchend',function(e){ if(x0===null)return; var d=e.changedTouches[0].clientX-x0; if(Math.abs(d)>40) show(i+(d<0?1:-1)); x0=null; });
+});
+</script>
+<script>
+(function(){
+  var bar=document.getElementById('stickybuy'), prod=document.getElementById('product'), foot=document.querySelector('.footer');
+  if(!bar||!prod||!('IntersectionObserver' in window))return;
+  var pastProduct=false, footerVisible=false;
+  function update(){ var on=pastProduct&&!footerVisible; bar.classList.toggle('is-on',on); bar.setAttribute('aria-hidden',on?'false':'true'); bar.querySelector('a').tabIndex=on?0:-1; }
+  new IntersectionObserver(function(e){ var r=e[0]; pastProduct=!r.isIntersecting&&r.boundingClientRect.top<0; update(); }).observe(prod);
+  new IntersectionObserver(function(e){ footerVisible=e[0].isIntersecting; update(); }).observe(foot);
+})();
+</script>
+<script>
+(function(){
+  var hdr=document.querySelector('.hdr');
+  function target(){
+    // phones: land on the product title so the options and Add to bag are on screen
+    return window.matchMedia('(max-width: 760px)').matches ? document.querySelector('.pinfo') : document.getElementById('product');
+  }
+  document.querySelectorAll('a[href="#product"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      var el=target(), gap=window.matchMedia('(max-width: 760px)').matches?12:0;
+      var y=el.getBoundingClientRect().top+window.scrollY-hdr.offsetHeight-gap;
+      window.scrollTo({top:y,behavior:'smooth'});
+      history.replaceState(null,'','#product');
+    });
+  });
+})();
+</script>
+<script>
+document.querySelectorAll('input[name="buy"]').forEach(function(r){
+  r.addEventListener('change',function(){ var t=document.querySelector('[data-add-price]'); if(t&&r.checked) t.textContent=r.dataset.price; });
+});
+</script>

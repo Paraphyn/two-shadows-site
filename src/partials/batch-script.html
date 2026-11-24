@@ -1,0 +1,24 @@
+<script>
+(function(){
+  var form=document.getElementById('batch-form'), input=document.getElementById('batch-no'), out=document.getElementById('batch-result');
+  if(!form)return;
+  function card(title, body, link){
+    var c=document.createElement('div'); c.className='card';
+    var h=document.createElement('h3'); h.textContent=title; c.appendChild(h);
+    var p=document.createElement('p'); p.textContent=body; c.appendChild(p);
+    if(link){ var a=document.createElement('a'); a.className=link.cls||'tlink'; a.href=link.href; a.textContent=link.text; if(link.download)a.setAttribute('download',''); c.appendChild(a); }
+    out.replaceChildren(c);
+  }
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var code=input.value.toUpperCase().replace(/\s+/g,'');
+    if(!code){ card('Enter a batch number','You’ll find it printed on your jar.'); input.focus(); return; }
+    out.textContent='Checking…';
+    fetch('/assets/coa/batches.json',{cache:'no-cache'}).then(function(r){ return r.json(); }).then(function(d){
+      var pdf=d.batches&&Object.prototype.hasOwnProperty.call(d.batches,code)?d.batches[code]:null;
+      if(pdf){ card('Batch '+code,'The certificate of analysis for this batch is ready to download.',{href:pdf,text:'Download certificate (PDF)',cls:'btn',download:true}); }
+      else { card('We couldn’t find batch '+code,'Check the number on your jar and try again. If it still doesn’t show, email us the batch number and we’ll send the certificate.',{href:'mailto:info@twoshadows.co.uk?subject='+encodeURIComponent('Certificate for batch '+code),text:'Email us'}); }
+    }).catch(function(){ card('Something went wrong','Please try again, or email us the batch number.',{href:'mailto:info@twoshadows.co.uk',text:'Email us'}); });
+  });
+})();
+</script>
