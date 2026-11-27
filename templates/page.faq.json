@@ -143,7 +143,7 @@
           "type": "question",
           "settings": {
             "question": "How much is delivery, and how long does it take?",
-            "answer": "<p>We deliver across the UK. Orders are dispatched within [X] working days. Delivery is [£X.XX], or free over [£XX]. [Carrier and times to be confirmed]</p>",
+            "answer": "<p>We deliver across the UK. Orders are dispatched within [X] working days. Delivery is £4.99, or free over £50. [Carrier and times to be confirmed]</p>",
             "draft": false
           }
         },

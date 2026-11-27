@@ -43,6 +43,36 @@
     ]
   },
   {
+    "name": "Cart",
+    "settings": [
+      {
+        "type": "number",
+        "id": "free_shipping_threshold",
+        "label": "Free delivery threshold (£)",
+        "info": "Match Settings → Shipping and delivery. 0 hides the progress bar.",
+        "default": 50
+      },
+      {
+        "type": "checkbox",
+        "id": "show_upsell",
+        "label": "Show 'add another jar' in the cart drawer",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "upsell_text",
+        "label": "Upsell text",
+        "default": "Keep a spare jar in the cupboard"
+      },
+      {
+        "type": "text",
+        "id": "upsell_button",
+        "label": "Upsell button",
+        "default": "+ Add a jar"
+      }
+    ]
+  },
+  {
     "name": "Social media",
     "settings": [
       {

@@ -1,0 +1,18 @@
+{%- comment -%} Free-delivery progress + optional upsell. Threshold and upsell are in Theme settings → Cart. {%- endcomment -%}
+{%- assign threshold = settings.free_shipping_threshold | times: 100 -%}
+{%- if bar != false and threshold > 0 and cart.item_count > 0 -%}
+  {%- assign left = threshold | minus: cart.total_price -%}
+  {%- assign pct = cart.total_price | times: 100 | divided_by: threshold -%}
+  {%- if pct > 100 %}{% assign pct = 100 %}{% endif -%}
+  <div class="ship-bar">
+    <p>{%- if left > 0 -%}{%- assign amt = left | money -%}{{ 'cart.free_left_html' | t: amount: amt }}{%- else -%}{{ 'cart.free_done' | t }}{%- endif -%}</p>
+    <span class="ship-track" aria-hidden="true"><span style="width:{{ pct }}%"></span></span>
+  </div>
+{%- endif -%}
+{%- if upsell and settings.show_upsell and cart.item_count > 0 and cart.item_count < 3 -%}
+  {%- assign first = cart.items.first -%}
+  <div class="upsell">
+    <span>{{ settings.upsell_text }}</span>
+    <button type="button" class="btn btn-ghost btn-sm" data-qty="{{ first.key }}" data-q="{{ first.quantity | plus: 1 }}">{{ settings.upsell_button }}</button>
+  </div>
+{%- endif -%}

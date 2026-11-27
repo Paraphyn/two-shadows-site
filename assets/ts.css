@@ -411,3 +411,12 @@ html.no-scroll { overflow: hidden; }
 }
 .cl-info b { font: 600 16px/1.3 var(--ui); }
 .drawer-foot form { width: 100%; }
+
+/* free-delivery bar + upsell */
+.ship-bar { padding: 14px 0 16px; border-bottom: 1px solid var(--line); margin-bottom: 8px; }
+.cart-page .ship-bar { max-width: 560px; border: 0; }
+.ship-bar p { margin: 0 0 8px; font: 500 14px var(--ui); }
+.ship-track { display: block; height: 6px; border-radius: 3px; background: var(--line); overflow: hidden; }
+.ship-track span { display: block; height: 100%; background: var(--plum); border-radius: 3px; transition: width .3s; }
+.upsell { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 16px; padding: 12px 14px; border: 1px dashed var(--line); border-radius: 12px; font: 500 14px var(--ui); }
+.btn-sm { padding: 8px 14px; font-size: 13px; min-height: 0; }

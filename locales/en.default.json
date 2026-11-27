@@ -9,6 +9,8 @@
     "continue": "Shop Gut & Digestion",
     "decrease": "Remove one",
     "empty": "Your bag is empty.",
+    "free_done": "You've got free UK delivery",
+    "free_left_html": "You're <b>{{ amount }}</b> away from free UK delivery",
     "increase": "Add one",
     "quantity": "Quantity",
     "remove": "Remove",

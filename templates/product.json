@@ -17,7 +17,7 @@
           "settings": {
             "icon": "truck",
             "title": "Dispatched within [X] working days",
-            "text": "Free UK delivery over [£XX], otherwise [£X.XX]."
+            "text": "Free UK delivery over £50, otherwise £4.99."
           }
         },
         "check3": {
@@ -91,7 +91,7 @@
           "type": "accordion",
           "settings": {
             "title": "Delivery & returns",
-            "content": "<p>UK delivery, dispatched within [X] working days; free over [£XX]. Changed your mind? Unopened jars can be returned within 14 days of delivery. <a href=\"/policies/refund-policy\">Returns policy</a></p>"
+            "content": "<p>UK delivery, dispatched within [X] working days; free over £50. Changed your mind? Unopened jars can be returned within 14 days of delivery. <a href=\"/policies/refund-policy\">Returns policy</a></p>"
           }
         }
       },

@@ -5,6 +5,7 @@
       <p class="lead" style="margin-top:16px">{{ 'cart.empty' | t }}</p>
       <a class="btn" href="{{ routes.root_url }}products/gut-and-digestion" style="margin-top:24px">{{ 'cart.continue' | t }}</a>
     {%- else -%}
+      {%- render 'free-ship-bar', upsell: false -%}
       <form action="{{ routes.cart_url }}" method="post" class="cart-form">
         <ul class="cart-lines">
           {%- for item in cart.items -%}

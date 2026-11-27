@@ -6,6 +6,7 @@
       <button type="button" class="drawer-x" data-cart-close aria-label="{{ 'cart.close' | t }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     </div>
     <div class="drawer-body" data-cart-body>
+      {%- render 'free-ship-bar' -%}
       {%- if cart.item_count == 0 -%}
         <p class="drawer-empty">{{ 'cart.empty' | t }}</p>
       {%- else -%}
@@ -27,6 +28,7 @@
             </li>
           {%- endfor -%}
         </ul>
+        {%- render 'free-ship-bar', bar: false, upsell: true -%}
       {%- endif -%}
     </div>
     {%- if cart.item_count > 0 -%}
