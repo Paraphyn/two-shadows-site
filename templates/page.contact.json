@@ -35,7 +35,7 @@
           "type": "card",
           "settings": {
             "title": "Post",
-            "text": "<p>Two Shadows<br>[UK postal address]</p><p>For returns, please read our returns policy first.</p>",
+            "text": "<p>Two Shadows<br>148 King’s Cross Rd<br>London WC1X 9DH</p><p>For returns, please read our returns policy first.</p>",
             "link_label": "Returns policy",
             "link_url": "/policies/refund-policy"
           }

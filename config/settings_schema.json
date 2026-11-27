@@ -26,7 +26,7 @@
         "type": "richtext",
         "id": "legal_line",
         "label": "Legal line in footer",
-        "default": "<p>Two Shadows is a trading name of Egor [Surname], [UK postal address].</p>"
+        "default": "<p>Two Shadows is a trading name of Egor Pavaliaev, 148 King’s Cross Rd, London WC1X 9DH.</p>"
       },
       {
         "type": "richtext",
