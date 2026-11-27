@@ -21,6 +21,11 @@
   assign fallback_titles = 'Made with care|Made in Britain|A treat, not a chore|Peace of mind for you' | split: '|'
   assign fallback_texts = 'Produced in a GB-registered feed facility in England.|From the East Sussex coast to your kitchen.|Made to taste like a treat, so the daily routine is easy to keep.|One small habit that supports the gut behind every good walk.' | split: '|'
   assign image_media = p.media | where: 'media_type', 'image'
+  assign media_offset = 0
+  if section.settings.show_jar and section.settings.jar_is_first_photo and image_media.size > 0
+    assign media_offset = 1
+  endif
+  assign shown_media = image_media.size | minus: media_offset
 -%}
 <section class="sec tint" id="product" aria-labelledby="pt-{{ section.id }}">
   <div class="wrap product-in">
@@ -35,8 +40,8 @@
             </figure>
             {%- assign slide = slide | plus: 1 -%}
           {%- endif -%}
-          {%- if image_media.size > 0 -%}
-            {%- for m in image_media -%}
+          {%- if shown_media > 0 -%}
+            {%- for m in image_media offset: media_offset -%}
               <figure class="slide{% if slide == 0 %} is-active{% endif %}" data-slide="{{ slide }}"{% unless slide == 0 %} hidden{% endunless %}>
                 {% render 'ts-image', image: m.preview_image, sizes: '(max-width: 760px) 100vw, 50vw', loading: 'lazy' %}
                 {%- if m.alt != blank %}<figcaption><b>{{ m.alt | escape }}</b></figcaption>{% endif -%}
@@ -62,8 +67,8 @@
             <button type="button" class="thumb" data-go="{{ t }}" aria-current="true"><span class="vh">{{ 'product.show_image' | t }}: {{ p.title | default: 'Gut &amp; Digestion' }}</span>{% render 'jar-art', class: 'mini', id: jid %}</button>
             {%- assign t = t | plus: 1 -%}
           {%- endif -%}
-          {%- if image_media.size > 0 -%}
-            {%- for m in image_media -%}
+          {%- if shown_media > 0 -%}
+            {%- for m in image_media offset: media_offset -%}
               <button type="button" class="thumb" data-go="{{ t }}"{% if t == 0 %} aria-current="true"{% endif %}>{{ m.preview_image | image_url: width: 240 | image_tag: widths: '120, 240', sizes: '(max-width: 760px) 64px, 112px', loading: 'lazy', alt: m.alt }}</button>
               {%- assign t = t | plus: 1 -%}
             {%- endfor -%}
@@ -75,7 +80,7 @@
             {%- endfor -%}
           {%- endif -%}
         </div>
-        {%- if image_media.size == 0 -%}
+        {%- if shown_media == 0 -%}
           <p class="ph" style="font-size:13px;margin-top:10px">[Photos are illustrative. Upload real product photos to the product in Shopify admin]</p>
         {%- endif -%}
       </div>
@@ -210,6 +215,7 @@
     { "type": "product", "id": "product", "label": "Product", "info": "On the product page the current product is used automatically." },
     { "type": "text", "id": "fallback_handle", "label": "Fallback product handle", "default": "gut-and-digestion" },
     { "type": "checkbox", "id": "show_jar", "label": "Show drawn jar as first image", "default": true },
+    { "type": "checkbox", "id": "jar_is_first_photo", "label": "Product's first photo is the pack shot", "info": "When on, the drawn jar stands in for the first product photo on the site; the photo is still used at checkout, in emails and in Google.", "default": true },
     { "type": "text", "id": "jar_caption", "label": "Jar caption", "default": "60 soft chews · 120 g · made in the UK" },
     { "type": "text", "id": "kicker", "label": "Kicker", "default": "Soft chews for dogs" },
     { "type": "text", "id": "subtitle", "label": "Subtitle", "default": "A little daily care, from the inside out." },
