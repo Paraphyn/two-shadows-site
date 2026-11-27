@@ -61,7 +61,7 @@
  },
  {
   "q": "How much is delivery, and how long does it take?",
-  "a": "We deliver across the UK. Orders are dispatched within <span class=\"ph\">[X]</span> working days. Delivery is <span class=\"ph\">[£X.XX]</span>, or free over <span class=\"ph\">[£XX]</span>. <span class=\"ph\">[Carrier and times to be confirmed]</span>"
+  "a": "We deliver across the UK. Orders are dispatched within <span class=\"ph\">[X]</span> working days. Delivery is <span class=\"ph\">£4.99</span>, or free over <span class=\"ph\">£50</span>. <span class=\"ph\">[Carrier and times to be confirmed]</span>"
  },
  {
   "q": "Where is it made?",
