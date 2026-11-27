@@ -1,0 +1,61 @@
+{%- assign points = section.blocks | where: 'type', 'strain_point' -%}
+<section class="sec tint-sand" id="inside" aria-labelledby="ing-{{ section.id }}">
+  <div class="wrap">
+    <div class="sec-head"><div><div class="kicker">{{ section.settings.kicker }}</div><h2 class="h2" id="ing-{{ section.id }}">{{ section.settings.heading }}</h2></div><p class="lead">{% render 'rt', t: section.settings.lead %}</p></div>
+    <div class="ing">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'ingredient' -%}
+          <figure {{ block.shopify_attributes }}>
+            <div class="ph-img">{% render 'ts-image', image: block.settings.image, asset: block.settings.asset, width: 1000, height: 1000, alt: block.settings.alt, sizes: '(max-width: 760px) 50vw, 25vw' %}</div>
+            <h3>{% render 'rt', t: block.settings.title %}</h3>
+            <p>{% render 'rt', t: block.settings.text %}</p>
+          </figure>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+    {%- if section.settings.foot_note != blank -%}<div class="foot-note">{% render 'rt', t: section.settings.foot_note %}</div>{%- endif -%}
+    {%- if section.settings.show_strain -%}
+      <div class="strain" id="ws" aria-labelledby="ws-{{ section.id }}">
+        <div class="strain-head">
+          <div class="kicker">{{ section.settings.strain_kicker }}</div>
+          <h3 class="h3" id="ws-{{ section.id }}">{{ section.settings.strain_heading }}</h3>
+          <p>{% render 'rt', t: section.settings.strain_text %}</p>
+        </div>
+        <dl class="strain-list">
+          {%- for block in points -%}<div {{ block.shopify_attributes }}><dt>{% render 'rt', t: block.settings.title %}</dt><dd>{% render 'rt', t: block.settings.text %}</dd></div>{%- endfor -%}
+        </dl>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "What’s inside",
+  "class": "section-inside",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "What’s inside" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Four ingredients doing the work" },
+    { "type": "textarea", "id": "lead", "label": "Lead", "default": "The key ingredients behind our first chew. The full composition is printed on every jar." },
+    { "type": "richtext", "id": "foot_note", "label": "Note under ingredients" },
+    { "type": "checkbox", "id": "show_strain", "label": "Show “Why this strain”", "default": true },
+    { "type": "text", "id": "strain_kicker", "label": "Strain kicker", "default": "Why this strain" },
+    { "type": "inline_richtext", "id": "strain_heading", "label": "Strain heading", "default": "<em>Bacillus velezensis</em> DSM 15544" },
+    { "type": "textarea", "id": "strain_text", "label": "Strain text", "default": "Not all gut-flora cultures are alike. We chose one specific, catalogued strain, so you know exactly what’s in every chew." }
+  ],
+  "blocks": [
+    { "type": "ingredient", "name": "Ingredient", "limit": 8, "settings": [
+      { "type": "image_picker", "id": "image", "label": "Image" },
+      { "type": "text", "id": "asset", "label": "Built-in photo (theme asset)", "info": "Used when no image is chosen" },
+      { "type": "text", "id": "alt", "label": "Alt text for the built-in photo" },
+      { "type": "inline_richtext", "id": "title", "label": "Title", "default": "Ingredient" },
+      { "type": "text", "id": "text", "label": "Text" }
+    ] },
+    { "type": "strain_point", "name": "Strain point", "limit": 6, "settings": [
+      { "type": "text", "id": "title", "label": "Title", "default": "Point" },
+      { "type": "inline_richtext", "id": "text", "label": "Text" }
+    ] }
+  ],
+  "presets": [ { "name": "What’s inside" } ]
+}
+{% endschema %}

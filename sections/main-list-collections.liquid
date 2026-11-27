@@ -1,0 +1,7 @@
+<section class="page-hero"><div class="wrap"><h1>{{ 'collection.all' | t }}</h1></div></section>
+<section class="sec" style="padding-top:24px"><div class="wrap">
+  <ul class="results">{%- for c in collections -%}<li><a class="tlink" href="{{ c.url }}">{{ c.title }}</a></li>{%- endfor -%}</ul>
+</div></section>
+{% schema %}
+{ "name": "Collections list", "settings": [] }
+{% endschema %}

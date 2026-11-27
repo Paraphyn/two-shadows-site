@@ -1,0 +1,87 @@
+{%- liquid
+  assign m1 = section.settings.menu_explore
+  assign m2 = section.settings.menu_help
+  assign m3 = section.settings.menu_legal
+-%}
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="foot-tag">{{ section.settings.tagline }}</p>
+        <p style="font-size:15px;color:var(--muted)">{% render 'rt', t: section.settings.subline %}</p>
+      </div>
+      <div>
+        <h2 class="foot-h">{{ section.settings.heading_explore }}</h2>
+        <nav aria-label="{{ section.settings.heading_explore | escape }}">
+          {%- if m1 != blank and m1.links.size > 0 -%}
+            {%- for link in m1.links -%}<a href="{{ link.url }}">{{ link.title | escape }}</a>{%- endfor -%}
+          {%- else -%}
+            <a href="{{ routes.root_url }}products/gut-and-digestion">Gut &amp; Digestion</a>
+            <a href="{{ routes.root_url }}pages/ingredients">Ingredients &amp; science</a>
+            <a href="{{ routes.root_url }}pages/about">Our story</a>
+            <a href="{{ routes.root_url }}pages/batch">Check your batch</a>
+          {%- endif -%}
+        </nav>
+      </div>
+      <div>
+        <h2 class="foot-h">{{ section.settings.heading_help }}</h2>
+        <nav aria-label="{{ section.settings.heading_help | escape }}">
+          {%- if m2 != blank and m2.links.size > 0 -%}
+            {%- for link in m2.links -%}<a href="{{ link.url }}">{{ link.title | escape }}</a>{%- endfor -%}
+          {%- else -%}
+            <a href="{{ routes.root_url }}pages/faq">FAQ</a>
+            <a href="{{ routes.root_url }}pages/contact">Contact us</a>
+            {%- if shop.shipping_policy != blank %}<a href="{{ shop.shipping_policy.url }}">Delivery</a>{% endif -%}
+            {%- if shop.refund_policy != blank %}<a href="{{ shop.refund_policy.url }}">Returns &amp; refunds</a>{% endif -%}
+            {%- if shop.subscription_policy != blank %}<a href="{{ shop.subscription_policy.url }}">Subscription terms</a>{% endif -%}
+          {%- endif -%}
+        </nav>
+      </div>
+      {%- form 'customer', class: 'foot-news' -%}
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        <h2 class="foot-h"><label for="NewsletterEmail-{{ section.id }}">{{ section.settings.heading_news }}</label></h2>
+        {%- if form.posted_successfully? -%}
+          <p class="news-ok" role="status">{{ 'footer.newsletter_success' | t }}</p>
+        {%- else -%}
+          <div class="news">
+            <input id="NewsletterEmail-{{ section.id }}" type="email" name="contact[email]" autocomplete="email" placeholder="{{ 'footer.email' | t }}" required>
+            <button type="submit">{{ 'footer.sign_up' | t }}</button>
+          </div>
+          {%- if form.errors -%}<p class="news-err" role="alert">{{ form.errors.translated_fields.email | capitalize }} {{ form.errors.messages.email }}</p>{%- endif -%}
+        {%- endif -%}
+      {%- endform -%}
+    </div>
+    <svg class="wordmark" viewBox="0 12 542 90" role="img" aria-label="{{ shop.name | escape }}"><text x="0" y="100" font-family="Anton, Impact, sans-serif" font-size="100" fill="#6B3550">{{ shop.name | upcase | escape }}</text></svg>
+    <div class="legal">
+      <p>&copy; {{ 'now' | date: '%Y' }} {{ shop.name | escape }}. {% assign ll = settings.legal_line | remove: '<p>' | remove: '</p>' %}{% render 'rt', t: ll %} <a href="mailto:{{ settings.contact_email }}">{{ settings.contact_email }}</a></p>
+      {{ settings.disclaimer }}
+      <nav aria-label="{{ 'footer.legal' | t }}">
+        {%- if m3 != blank and m3.links.size > 0 -%}
+          {%- for link in m3.links -%}<a href="{{ link.url }}">{{ link.title | escape }}</a>{%- endfor -%}
+        {%- else -%}
+          {%- if shop.privacy_policy != blank %}<a href="{{ shop.privacy_policy.url }}">Privacy</a>{% endif -%}
+          {%- if shop.terms_of_service != blank %}<a href="{{ shop.terms_of_service.url }}">Terms of sale</a>{% endif -%}
+          {%- if shop.refund_policy != blank %}<a href="{{ shop.refund_policy.url }}">Returns</a>{% endif -%}
+        {%- endif -%}
+        <span>United Kingdom · {{ cart.currency.iso_code }} {{ cart.currency.symbol }}</span>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "class": "section-footer",
+  "settings": [
+    { "type": "text", "id": "tagline", "label": "Tagline", "default": "For the love of a good dog." },
+    { "type": "text", "id": "subline", "label": "Line under tagline", "default": "Made in the UK in a GB-registered feed facility." },
+    { "type": "text", "id": "heading_explore", "label": "Column 1 heading", "default": "Explore" },
+    { "type": "link_list", "id": "menu_explore", "label": "Column 1 menu" },
+    { "type": "text", "id": "heading_help", "label": "Column 2 heading", "default": "Help" },
+    { "type": "link_list", "id": "menu_help", "label": "Column 2 menu" },
+    { "type": "text", "id": "heading_news", "label": "Newsletter heading", "default": "Occasional good news" },
+    { "type": "link_list", "id": "menu_legal", "label": "Legal links menu", "info": "If empty, the store policies are linked." }
+  ]
+}
+{% endschema %}

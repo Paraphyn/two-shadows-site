@@ -1,0 +1,39 @@
+<section class="hero">
+  <div class="wrap hero-in">
+    <div>
+      <div class="kicker">{{ section.settings.kicker }}</div>
+      <h1>{{ section.settings.heading }}</h1>
+      <p>{% render 'rt', t: section.settings.text %}</p>
+      <div class="hero-cta">
+        {%- if section.settings.button_label != blank %}<a class="btn" href="{{ section.settings.button_link | default: '#product' }}">{{ section.settings.button_label }}</a>{% endif -%}
+        {%- if section.settings.link_label != blank %}<a class="tlink" href="{{ section.settings.link_url | default: '#inside' }}">{{ section.settings.link_label }}</a>{% endif -%}
+      </div>
+      <div class="hero-note">
+        {%- for block in section.blocks -%}<span {{ block.shopify_attributes }}>{% render 'icon-check' %}{% render 'rt', t: block.settings.text %}</span>{%- endfor -%}
+      </div>
+    </div>
+    <div class="hero-img">
+      {% render 'ts-image', image: section.settings.image, asset: 'hero.webp', asset_small: 'hero-560.webp', asset_small_width: 560, width: 896, height: 1120, alt: section.settings.image_alt, sizes: '(max-width: 760px) 100vw, 50vw', loading: 'eager', fetchpriority: 'high' %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero",
+  "class": "section-hero",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "Gut & Digestion soft chews" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Good days start with a happy gut" },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "A daily soft chew made in the UK, with a live gut-flora culture and natural fibres to support healthy digestion." },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Shop Gut & Digestion" },
+    { "type": "url", "id": "button_link", "label": "Button link", "info": "Empty = scroll to the product section" },
+    { "type": "text", "id": "link_label", "label": "Text link label", "default": "What’s inside" },
+    { "type": "url", "id": "link_url", "label": "Text link", "info": "Empty = scroll to What’s inside" },
+    { "type": "image_picker", "id": "image", "label": "Image", "info": "Empty = built-in photo" },
+    { "type": "text", "id": "image_alt", "label": "Alt text for the built-in photo", "default": "A man sitting on the floor of a bright flat with his German Shepherd leaning against him" }
+  ],
+  "blocks": [ { "type": "note", "name": "Tick note", "limit": 4, "settings": [ { "type": "text", "id": "text", "label": "Text", "default": "Made in the UK" } ] } ],
+  "presets": [ { "name": "Hero" } ]
+}
+{% endschema %}

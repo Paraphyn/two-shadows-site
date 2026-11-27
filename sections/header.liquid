@@ -1,0 +1,37 @@
+{%- liquid
+  assign menu = section.settings.menu
+-%}
+<header class="hdr">
+  <div class="wrap hdr-in">
+    <nav class="nav" aria-label="{{ 'header.main_menu' | t }}">
+      {%- if menu != blank and menu.links.size > 0 -%}
+        {%- for link in menu.links -%}
+          <a href="{{ link.url }}"{% if link.current %} aria-current="page"{% endif %}>{{ link.title | escape }}</a>
+        {%- endfor -%}
+      {%- else -%}
+        <a href="{{ routes.root_url }}products/{{ section.settings.product_handle }}">Gut &amp; Digestion</a>
+        <a href="{{ routes.root_url }}pages/ingredients">Ingredients</a>
+        <a href="{{ routes.root_url }}pages/about">Our story</a>
+      {%- endif -%}
+    </nav>
+    <a class="logo" href="{{ routes.root_url }}">{{ shop.name | upcase | escape }}</a>
+    <div class="hdr-act">
+      <a class="faq-link" href="{{ routes.root_url }}pages/faq">FAQ</a>
+      <a class="bag" href="{{ routes.cart_url }}" data-cart-open aria-haspopup="dialog">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" focusable="false"><path d="M5 8h14l-1.2 12H6.2z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        <span>{{ 'header.bag' | t }} (<span data-cart-count>{{ cart.item_count }}</span>)</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "class": "section-header",
+  "settings": [
+    { "type": "link_list", "id": "menu", "label": "Main menu", "info": "If empty, the default links are shown." },
+    { "type": "text", "id": "product_handle", "label": "Product handle for the default link", "default": "gut-and-digestion" }
+  ]
+}
+{% endschema %}

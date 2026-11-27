@@ -1,0 +1,32 @@
+{
+  "sections": {
+    "hero": {
+      "type": "ts-page-hero",
+      "settings": {
+        "kicker": "Check your batch",
+        "heading": "See what’s in your jar",
+        "lead": "<p>Every jar carries a batch number. Enter it below to see that batch’s certificate of analysis (CoA).</p>",
+        "notice": "<p>[Certificates of analysis per batch are being requested from the manufacturer. Until they are added, any number shows the “not found” message.]</p>"
+      }
+    },
+    "lookup": {
+      "type": "ts-batch",
+      "settings": {
+        "help": "<p>You’ll find it [location on the jar, e.g. on the base next to the best-before date]. It looks like [format, e.g. TS-0000].</p>"
+      }
+    },
+    "info": {
+      "type": "ts-two-col",
+      "settings": {
+        "kicker": "Good to know",
+        "heading": "What’s a certificate of analysis?",
+        "text": "<p>A certificate of analysis is a laboratory report for one production batch. It records what was measured in that batch and the result.</p><p>[What each certificate covers, e.g. live culture count and microbiological checks: to be confirmed with the manufacturer]</p><p>Questions about a batch? <a href=\"/pages/contact\">Contact us</a> with the batch number and we’ll help.</p>"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "lookup",
+    "info"
+  ]
+}

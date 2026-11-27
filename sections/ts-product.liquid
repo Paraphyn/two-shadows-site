@@ -1,0 +1,255 @@
+{%- liquid
+  assign p = section.settings.product
+  if p == blank and request.page_type == 'product'
+    assign p = product
+  endif
+  if p == blank
+    assign p = all_products[section.settings.fallback_handle]
+  endif
+  assign has_product = false
+  if p != blank and p.id != blank
+    assign has_product = true
+    assign v = p.selected_or_first_available_variant
+  endif
+  assign heading_tag = 'h2'
+  if request.page_type == 'product'
+    assign heading_tag = 'h1'
+  endif
+  assign fallback_assets = 'pdp-production.webp,pdp-sussex.webp,pdp-sleep.webp,pdp-walk.webp' | split: ','
+  assign fallback_thumbs = 'pdp-production-thumb.webp,pdp-sussex-thumb.webp,pdp-sleep-thumb.webp,pdp-walk-thumb.webp' | split: ','
+  assign fallback_alts = 'A technician inspecting soft chews on a production line|Green downs and white cliffs on the East Sussex coast|A Beagle asleep on a rug after its meal|A woman walking her Springer Spaniel on a countryside path' | split: '|'
+  assign fallback_titles = 'Made with care|Made in Britain|A treat, not a chore|Peace of mind for you' | split: '|'
+  assign fallback_texts = 'Produced in a GB-registered feed facility in England.|From the East Sussex coast to your kitchen.|Made to taste like a treat, so the daily routine is easy to keep.|One small habit that supports the gut behind every good walk.' | split: '|'
+  assign image_media = p.media | where: 'media_type', 'image'
+-%}
+<section class="sec tint" id="product" aria-labelledby="pt-{{ section.id }}">
+  <div class="wrap product-in">
+    <div>
+      <div class="gallery" data-gallery>
+        <div class="gallery-main">
+          {%- assign slide = 0 -%}
+          {%- if section.settings.show_jar -%}
+            <figure class="slide is-active" data-slide="{{ slide }}">
+              {% render 'jar-art', class: 'jar', id: section.id %}
+              <figcaption><b>{{ p.title | default: 'Gut &amp; Digestion' }}</b><span>{{ section.settings.jar_caption }}</span></figcaption>
+            </figure>
+            {%- assign slide = slide | plus: 1 -%}
+          {%- endif -%}
+          {%- if image_media.size > 0 -%}
+            {%- for m in image_media -%}
+              <figure class="slide{% if slide == 0 %} is-active{% endif %}" data-slide="{{ slide }}"{% unless slide == 0 %} hidden{% endunless %}>
+                {% render 'ts-image', image: m.preview_image, sizes: '(max-width: 760px) 100vw, 50vw', loading: 'lazy' %}
+                {%- if m.alt != blank %}<figcaption><b>{{ m.alt | escape }}</b></figcaption>{% endif -%}
+              </figure>
+              {%- assign slide = slide | plus: 1 -%}
+            {%- endfor -%}
+          {%- else -%}
+            {%- for a in fallback_assets -%}
+              <figure class="slide{% if slide == 0 %} is-active{% endif %}" data-slide="{{ slide }}"{% unless slide == 0 %} hidden{% endunless %}>
+                {% render 'ts-image', asset: a, width: 1024, height: 1024, alt: fallback_alts[forloop.index0], sizes: '(max-width: 760px) 100vw, 50vw' %}
+                <figcaption><b>{{ fallback_titles[forloop.index0] }}</b><span>{{ fallback_texts[forloop.index0] }}</span></figcaption>
+              </figure>
+              {%- assign slide = slide | plus: 1 -%}
+            {%- endfor -%}
+          {%- endif -%}
+          <button type="button" class="g-nav g-prev" aria-label="{{ 'product.previous_image' | t }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button type="button" class="g-nav g-next" aria-label="{{ 'product.next_image' | t }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+        </div>
+        <div class="gallery-thumbs">
+          {%- assign t = 0 -%}
+          {%- if section.settings.show_jar -%}
+            {%- assign jid = section.id | append: 't' -%}
+            <button type="button" class="thumb" data-go="{{ t }}" aria-current="true"><span class="vh">{{ 'product.show_image' | t }}: {{ p.title | default: 'Gut &amp; Digestion' }}</span>{% render 'jar-art', class: 'mini', id: jid %}</button>
+            {%- assign t = t | plus: 1 -%}
+          {%- endif -%}
+          {%- if image_media.size > 0 -%}
+            {%- for m in image_media -%}
+              <button type="button" class="thumb" data-go="{{ t }}"{% if t == 0 %} aria-current="true"{% endif %}>{{ m.preview_image | image_url: width: 240 | image_tag: widths: '120, 240', sizes: '(max-width: 760px) 64px, 112px', loading: 'lazy', alt: m.alt }}</button>
+              {%- assign t = t | plus: 1 -%}
+            {%- endfor -%}
+          {%- else -%}
+            {%- for a in fallback_thumbs -%}
+              {%- assign small = a | replace: '-thumb.webp', '-thumb-120.webp' -%}
+              <button type="button" class="thumb" data-go="{{ t }}"{% if t == 0 %} aria-current="true"{% endif %}>{% render 'ts-image', asset: a, asset_small: small, asset_small_width: 120, width: 240, height: 240, alt: fallback_alts[forloop.index0], sizes: '(max-width: 760px) 64px, 112px' %}</button>
+              {%- assign t = t | plus: 1 -%}
+            {%- endfor -%}
+          {%- endif -%}
+        </div>
+        {%- if image_media.size == 0 -%}
+          <p class="ph" style="font-size:13px;margin-top:10px">[Photos are illustrative. Upload real product photos to the product in Shopify admin]</p>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <div class="pinfo">
+      <div class="kicker" style="margin:0">{{ section.settings.kicker }}</div>
+      <{{ heading_tag }} id="pt-{{ section.id }}">{{ p.title | default: 'Gut &amp; Digestion' }}</{{ heading_tag }}>
+      <p class="sub">{{ section.settings.subtitle }}</p>
+
+      {%- if has_product -%}
+        {%- form 'product', p, id: 'ProductForm', class: 'buybox', data-product-form: '' -%}
+          <input type="hidden" name="id" value="{{ v.id }}" data-variant-id>
+          {%- unless p.has_only_default_variant -%}
+            <label class="variant-pick"><span class="vh">{{ 'product.variant' | t }}</span>
+              <select data-variant-select>
+                {%- for variant in p.variants -%}
+                  <option value="{{ variant.id }}" data-price="{{ variant.price | money }}"{% if variant == v %} selected{% endif %}{% unless variant.available %} disabled{% endunless %}>{{ variant.title }} · {{ variant.price | money }}</option>
+                {%- endfor -%}
+              </select>
+            </label>
+          {%- endunless -%}
+          <fieldset class="buy"><legend>{{ section.settings.options_legend }}</legend>
+            {%- if p.selling_plan_groups.size > 0 -%}
+              {%- for group in p.selling_plan_groups -%}
+                {%- for plan in group.selling_plans -%}
+                  {%- assign alloc = v.selling_plan_allocations | where: 'selling_plan_id', plan.id | first -%}
+                  {%- if alloc -%}
+                    {%- assign saving = alloc.compare_at_price | minus: alloc.price -%}
+                    <label class="opt"><input type="radio" name="selling_plan" value="{{ plan.id }}" data-price="{{ alloc.price | money }}"{% if p.requires_selling_plan and forloop.first %} checked{% endif %}>
+                      <span class="t">{{ section.settings.sub_title }}{% if saving > 0 %}<span class="save">−{{ saving | times: 100.0 | divided_by: alloc.compare_at_price | round }}%</span>{% endif %}<small>{{ plan.name }}. {{ section.settings.sub_note }}</small></span>
+                      <span class="p">{{ alloc.price | money }}</span></label>
+                  {%- endif -%}
+                {%- endfor -%}
+              {%- endfor -%}
+            {%- elsif section.settings.show_sub_placeholder -%}
+              <label class="opt opt-off" aria-disabled="true"><input type="radio" disabled><span class="t">{{ section.settings.sub_title }}<span class="save">[XX]%</span><small>A jar every [X] weeks. {{ section.settings.sub_note }}</small></span><span class="p">[£PRICE]</span></label>
+            {%- endif -%}
+            {%- unless p.requires_selling_plan -%}
+              <label class="opt"><input type="radio" name="selling_plan" value="" data-price="{{ v.price | money }}" checked><span class="t">{{ section.settings.once_title }}</span><span class="p">{{ v.price | money }}</span></label>
+            {%- endunless -%}
+          </fieldset>
+          <button type="submit" name="add" class="btn add" data-add{% unless v.available %} disabled{% endunless %}>
+            {%- if v.available -%}{{ 'product.add_to_bag' | t }}&nbsp;·&nbsp;<span data-add-price>{{ v.price | money }}</span>{%- else -%}{{ 'product.sold_out' | t }}{%- endif -%}
+          </button>
+          <p class="form-msg" role="status" aria-live="polite" data-form-msg></p>
+          {%- if section.settings.show_dynamic_checkout -%}{{ form | payment_button }}{%- endif -%}
+        {%- endform -%}
+      {%- else -%}
+        <div class="buybox">
+          <p class="ph">[Choose the product in the theme editor: Product section → Product]</p>
+          <button type="button" class="btn add" disabled>{{ 'product.add_to_bag' | t }}&nbsp;·&nbsp;£22.99</button>
+        </div>
+      {%- endif -%}
+
+      <ul class="assure" aria-label="{{ 'product.assurance' | t }}">
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>{{ section.settings.assure_1 }}</li>
+        {%- if section.settings.assure_2 != blank -%}<li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.3-5.6M4 4v4h4"/></svg>{{ section.settings.assure_2 }}</li>{%- endif -%}
+      </ul>
+      {%- if shop.enabled_payment_types.size > 0 -%}
+        <ul class="pay pay-icons" aria-label="{{ 'product.payment_methods' | t }}">
+          {%- for type in shop.enabled_payment_types -%}<li>{{ type | payment_type_svg_tag: class: 'pay-icon' }}</li>{%- endfor -%}
+        </ul>
+      {%- endif -%}
+
+      {%- assign promises = section.blocks | where: 'type', 'promise' -%}
+      {%- if promises.size > 0 -%}
+        <div class="promise">
+          {%- for block in promises -%}
+            <div {{ block.shopify_attributes }}>
+              {%- if block.settings.icon == 'truck' -%}
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6B3550" stroke-width="1.8" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg>
+              {%- else -%}
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6B3550" stroke-width="1.8" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>
+              {%- endif -%}
+              <p><b>{% render 'rt', t: block.settings.title %}</b><span>{% render 'rt', t: block.settings.text %}</span></p>
+            </div>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+      {%- if section.settings.footnote != blank -%}<p class="small">{% render 'rt', t: section.settings.footnote %}</p>{%- endif -%}
+
+      {%- assign checks = section.blocks | where: 'type', 'check' -%}
+      {%- if checks.size > 0 -%}
+        <ul class="checks">
+          {%- for block in checks -%}<li {{ block.shopify_attributes }}>{% render 'icon-check' %}{% render 'rt', t: block.settings.text %}</li>{%- endfor -%}
+        </ul>
+      {%- endif -%}
+      {%- if section.settings.checks_note != blank -%}<p class="ph" style="font-size:14px">{% render 'rt', t: section.settings.checks_note %}</p>{%- endif -%}
+
+      <div class="desc">{%- if has_product and p.description != blank -%}{{ p.description }}{%- else -%}{{ section.settings.fallback_description }}{%- endif -%}</div>
+
+      {%- assign facts = section.blocks | where: 'type', 'fact' -%}
+      {%- if facts.size > 0 -%}
+        <dl class="facts" style="margin:0">
+          {%- for block in facts -%}<div {{ block.shopify_attributes }}><dt>{{ block.settings.label }}</dt><dd>{% render 'rt', t: block.settings.value %}</dd></div>{%- endfor -%}
+        </dl>
+      {%- endif -%}
+
+      <div class="acc">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'accordion' -%}
+              <details {{ block.shopify_attributes }}><summary><span>{% render 'rt', t: block.settings.title %}</span>{% render 'icon-chevron' %}</summary>{{ block.settings.content }}</details>
+            {%- when 'feeding' -%}
+              <details {{ block.shopify_attributes }}><summary><span>{% render 'rt', t: block.settings.title %}</span>{% render 'icon-chevron' %}</summary><div class="feed-wrap">{% render 'feeding-table' %}</div>{{ block.settings.content }}{% render 'help-note' %}</details>
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{%- if section.settings.show_sticky -%}
+  <div class="stickybuy" id="stickybuy" aria-hidden="true">
+    <div class="wrap stickybuy-in">
+      <div class="sb-info"><span class="sb-thumb">{% render 'ts-image', image: p.featured_image, asset: 'ing-chews-thumb.webp', asset_small: 'ing-chews-thumb-120.webp', asset_small_width: 120, width: 240, height: 240, alt: '', widths: '120, 240', sizes: '64px' %}</span><span><b>{{ p.title | default: 'Gut &amp; Digestion' }}</b><small>{{ section.settings.sticky_note }}{% if has_product %} · {{ v.price | money }}{% endif %}</small></span></div>
+      <a class="btn sb-btn" href="#product" tabindex="-1">{{ 'product.choose_and_buy' | t }}</a>
+    </div>
+  </div>
+{%- endif -%}
+
+{%- if has_product and request.page_type == 'product' -%}
+  <script type="application/ld+json">{{ p | structured_data }}</script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Product (buy box)",
+  "class": "section-product",
+  "settings": [
+    { "type": "product", "id": "product", "label": "Product", "info": "On the product page the current product is used automatically." },
+    { "type": "text", "id": "fallback_handle", "label": "Fallback product handle", "default": "gut-and-digestion" },
+    { "type": "checkbox", "id": "show_jar", "label": "Show drawn jar as first image", "default": true },
+    { "type": "text", "id": "jar_caption", "label": "Jar caption", "default": "60 soft chews · 120 g · made in the UK" },
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "Soft chews for dogs" },
+    { "type": "text", "id": "subtitle", "label": "Subtitle", "default": "A little daily care, from the inside out." },
+    { "type": "header", "content": "Purchase options" },
+    { "type": "text", "id": "options_legend", "label": "Options heading", "default": "How would you like it?" },
+    { "type": "text", "id": "sub_title", "label": "Subscription label", "default": "Subscribe & save" },
+    { "type": "text", "id": "sub_note", "label": "Subscription note", "default": "Skip or cancel anytime." },
+    { "type": "checkbox", "id": "show_sub_placeholder", "label": "Show subscription placeholder until selling plans exist", "default": true },
+    { "type": "text", "id": "once_title", "label": "One-time label", "default": "One-time purchase" },
+    { "type": "checkbox", "id": "show_dynamic_checkout", "label": "Show express checkout buttons", "default": false },
+    { "type": "text", "id": "assure_1", "label": "Assurance line 1", "default": "Secure checkout" },
+    { "type": "text", "id": "assure_2", "label": "Assurance line 2", "default": "Subscriptions: cancel online anytime" },
+    { "type": "inline_richtext", "id": "footnote", "label": "Footnote", "default": "*One jar lasts 30 days for a 10–30 kg dog at two chews a day." },
+    { "type": "inline_richtext", "id": "checks_note", "label": "Note under benefits", "default": "[Benefit wording to be confirmed with the manufacturer]" },
+    { "type": "richtext", "id": "fallback_description", "label": "Description if the product has none", "default": "<p>Each chew combines Bacillus velezensis, a live gut-flora culture, with prebiotic inulin, psyllium husk and pumpkin and squash seeds. It’s designed to support healthy digestion, and most dogs treat it as a treat.</p>" },
+    { "type": "checkbox", "id": "show_sticky", "label": "Show sticky 'Choose & buy' bar", "default": true },
+    { "type": "text", "id": "sticky_note", "label": "Sticky bar note", "default": "60 chews" }
+  ],
+  "blocks": [
+    { "type": "promise", "name": "Promise card", "limit": 4, "settings": [
+      { "type": "select", "id": "icon", "label": "Icon", "options": [ { "value": "shield", "label": "Shield" }, { "value": "truck", "label": "Truck" } ], "default": "shield" },
+      { "type": "inline_richtext", "id": "title", "label": "Title", "default": "Happy Gut Guarantee" },
+      { "type": "inline_richtext", "id": "text", "label": "Text", "default": "Not happy with your first jar? We’ll refund it." }
+    ] },
+    { "type": "check", "name": "Benefit tick", "limit": 6, "settings": [
+      { "type": "text", "id": "text", "label": "Text", "default": "Supports healthy digestion" }
+    ] },
+    { "type": "fact", "name": "Fact", "limit": 6, "settings": [
+      { "type": "text", "id": "label", "label": "Label", "default": "Contents" },
+      { "type": "text", "id": "value", "label": "Value", "default": "60 soft chews" }
+    ] },
+    { "type": "accordion", "name": "Accordion", "settings": [
+      { "type": "text", "id": "title", "label": "Title", "default": "Composition & additives" },
+      { "type": "richtext", "id": "content", "label": "Content" }
+    ] },
+    { "type": "feeding", "name": "Feeding guide", "limit": 1, "settings": [
+      { "type": "text", "id": "title", "label": "Title", "default": "Feeding guide" },
+      { "type": "richtext", "id": "content", "label": "Text under the table", "default": "<p>A complementary feed for dogs over 12 weeks of age. Allow 4–6 weeks for optimum results.</p>" }
+    ] }
+  ],
+  "presets": [ { "name": "Product (buy box)" } ]
+}
+{% endschema %}

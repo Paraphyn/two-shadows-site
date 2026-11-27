@@ -1,0 +1,79 @@
+{
+  "batch": {
+    "check": "Check batch",
+    "label": "Batch number"
+  },
+  "cart": {
+    "checkout": "Checkout",
+    "close": "Close bag",
+    "continue": "Shop Gut & Digestion",
+    "decrease": "Remove one",
+    "empty": "Your bag is empty.",
+    "increase": "Add one",
+    "quantity": "Quantity",
+    "remove": "Remove",
+    "subtotal": "Subtotal",
+    "taxes_shipping": "Delivery and discounts are calculated at checkout.",
+    "title": "Your bag",
+    "update": "Update",
+    "view": "View bag"
+  },
+  "collection": {
+    "all": "All collections",
+    "empty": "No products here yet."
+  },
+  "contact": {
+    "email": "Email",
+    "message": "Message",
+    "name": "Name",
+    "order": "Order or batch number (optional)",
+    "send": "Send message",
+    "success": "Thanks, your message is on its way. We’ll reply by email."
+  },
+  "footer": {
+    "email": "Email address",
+    "legal": "Legal",
+    "newsletter_success": "Thanks for signing up.",
+    "sign_up": "Sign up"
+  },
+  "general": {
+    "404_text": "The page you were looking for has moved or doesn’t exist.",
+    "404_title": "Page not found",
+    "home": "Back to home",
+    "on_this_page": "On this page",
+    "pagination": "Pages",
+    "skip": "Skip to content"
+  },
+  "gift_card": {
+    "expired": "This gift card has expired.",
+    "shop": "Start shopping",
+    "title": "Your gift card"
+  },
+  "header": {
+    "bag": "Bag",
+    "main_menu": "Main"
+  },
+  "password": {
+    "enter": "Enter",
+    "label": "Password",
+    "notify": "Notify me",
+    "owner": "Store owner? Enter the password"
+  },
+  "product": {
+    "add_to_bag": "Add to bag",
+    "assurance": "Buying with confidence",
+    "choose_and_buy": "Choose & buy",
+    "next_image": "Next image",
+    "payment_methods": "Payment methods",
+    "previous_image": "Previous image",
+    "show_image": "Show image",
+    "sold_out": "Sold out",
+    "variant": "Option"
+  },
+  "search": {
+    "none": "No results for “{{ terms }}”.",
+    "placeholder": "Search",
+    "submit": "Search",
+    "title": "Search"
+  }
+}

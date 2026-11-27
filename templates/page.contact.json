@@ -1,0 +1,69 @@
+{
+  "sections": {
+    "hero": {
+      "type": "ts-page-hero",
+      "settings": {
+        "kicker": "Contact",
+        "heading": "We’re happy to help",
+        "lead": "<p>Questions about your order, your subscription or which amount suits your dog? Get in touch and a real person will reply.</p>"
+      }
+    },
+    "cards": {
+      "type": "ts-cards",
+      "settings": {
+        "aria": "Ways to reach us",
+        "tint": true,
+        "compact": true
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Email",
+            "big": "<a href=\"mailto:info@twoshadows.co.uk\">info@twoshadows.co.uk</a>",
+            "text": "<p>We reply within [X working hours / days], Monday to Friday.</p>"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "WhatsApp",
+            "text": "<p>[Number or chat link to be added]</p><p>Quick questions, [hours].</p>"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Post",
+            "text": "<p>Two Shadows<br>[UK postal address]</p><p>For returns, please read our returns policy first.</p>",
+            "link_label": "Returns policy",
+            "link_url": "/policies/refund-policy"
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3"
+      ]
+    },
+    "form": {
+      "type": "ts-contact-form",
+      "settings": {}
+    },
+    "info": {
+      "type": "ts-two-col",
+      "settings": {
+        "kicker": "Get a faster answer",
+        "heading": "What to include",
+        "text": "<ul><li><strong>About an order:</strong> your order number and the email you used.</li><li><strong>About a jar:</strong> the batch number printed on the jar, and a photo if something looks wrong.</li><li><strong>Which amount to give:</strong> your dog’s weight, age and breed.</li><li><strong>About your subscription:</strong> you can skip, pause or cancel online yourself in your account.</li></ul><p>Many answers are already in our <a href=\"/pages/faq\">FAQ</a>. If your dog seems unwell, please contact your vet.</p>"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "cards",
+    "form",
+    "info"
+  ]
+}

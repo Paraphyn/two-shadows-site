@@ -1,0 +1,35 @@
+<section class="sec" style="padding-top:64px">
+  <div class="wrap cart-page">
+    <h1 class="h2">{{ 'cart.title' | t }}</h1>
+    {%- if cart.item_count == 0 -%}
+      <p class="lead" style="margin-top:16px">{{ 'cart.empty' | t }}</p>
+      <a class="btn" href="{{ routes.root_url }}products/gut-and-digestion" style="margin-top:24px">{{ 'cart.continue' | t }}</a>
+    {%- else -%}
+      <form action="{{ routes.cart_url }}" method="post" class="cart-form">
+        <ul class="cart-lines">
+          {%- for item in cart.items -%}
+            <li class="cart-line">
+              <span class="cl-img">{%- if item.image -%}{{ item.image | image_url: width: 240 | image_tag: width: 120, height: 120, loading: 'lazy', alt: item.title }}{%- endif -%}</span>
+              <span class="cl-info">
+                <a href="{{ item.url }}"><b>{{ item.product.title }}</b></a>
+                {%- if item.selling_plan_allocation %}<small>{{ item.selling_plan_allocation.selling_plan.name }}</small>{% endif -%}
+                <label class="qty-input"><span class="vh">{{ 'cart.quantity' | t }}</span><input type="number" name="updates[]" value="{{ item.quantity }}" min="0"></label>
+                <a class="tlink" href="{{ item.url_to_remove }}">{{ 'cart.remove' | t }}</a>
+              </span>
+              <span class="cl-price">{{ item.final_line_price | money }}</span>
+            </li>
+          {%- endfor -%}
+        </ul>
+        <div class="cart-sum">
+          <p class="drawer-total"><span>{{ 'cart.subtotal' | t }}</span><b>{{ cart.total_price | money }}</b></p>
+          <p class="small">{{ 'cart.taxes_shipping' | t }}</p>
+          <div class="cart-btns"><button type="submit" name="update" class="btn btn-ghost">{{ 'cart.update' | t }}</button><button type="submit" name="checkout" class="btn">{{ 'cart.checkout' | t }}</button></div>
+        </div>
+      </form>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{ "name": "Cart", "settings": [] }
+{% endschema %}

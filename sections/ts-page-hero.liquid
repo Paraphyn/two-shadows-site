@@ -1,0 +1,42 @@
+{%- assign links = section.blocks | where: 'type', 'toc' -%}
+<section class="page-hero{% if section.settings.image != blank or section.settings.asset != blank %} split{% endif %}">
+  <div class="wrap">
+    <div>
+      <div class="kicker">{{ section.settings.kicker }}</div>
+      <h1>{{ section.settings.heading | default: page.title }}</h1>
+      {%- if section.settings.lead != blank %}<div class="lead">{% render 'rt', t: section.settings.lead %}</div>{% endif -%}
+      {%- if section.settings.sign != blank %}<p style="font:600 16px var(--ui);color:var(--plum);margin-top:24px">{{ section.settings.sign }}</p>{% endif -%}
+      {%- if links.size > 0 -%}
+        <nav class="toc" aria-label="{{ 'general.on_this_page' | t }}">
+          {%- for block in links -%}<a class="tlink" href="{{ block.settings.url }}" {{ block.shopify_attributes }}>{{ block.settings.label }}</a>{%- endfor -%}
+        </nav>
+      {%- endif -%}
+      {%- if section.settings.notice != blank %}<div class="notice ph">{% render 'rt', t: section.settings.notice %}</div>{% endif -%}
+    </div>
+    {%- if section.settings.image != blank or section.settings.asset != blank -%}
+      {% render 'ts-image', image: section.settings.image, asset: section.settings.asset, width: 1168, height: 880, alt: section.settings.image_alt, sizes: '(max-width: 1024px) 100vw, 50vw', loading: 'eager' %}
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Page heading",
+  "class": "section-page-hero",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker" },
+    { "type": "text", "id": "heading", "label": "Heading", "info": "Empty = page title" },
+    { "type": "richtext", "id": "lead", "label": "Lead" },
+    { "type": "text", "id": "sign", "label": "Sign-off line" },
+    { "type": "richtext", "id": "notice", "label": "Placeholder notice", "info": "Shown in a dashed box; hidden when placeholders are turned off" },
+    { "type": "image_picker", "id": "image", "label": "Image (optional)" },
+    { "type": "text", "id": "asset", "label": "Built-in photo (theme asset)" },
+    { "type": "text", "id": "image_alt", "label": "Alt text for the built-in photo" }
+  ],
+  "blocks": [ { "type": "toc", "name": "On-page link", "limit": 6, "settings": [
+    { "type": "text", "id": "label", "label": "Label", "default": "Section" },
+    { "type": "text", "id": "url", "label": "Anchor or link", "default": "#" }
+  ] } ],
+  "presets": [ { "name": "Page heading" } ]
+}
+{% endschema %}

@@ -1,0 +1,25 @@
+<section class="sec" id="{{ section.settings.anchor | default: 'composition' }}" aria-labelledby="cm-{{ section.id }}">
+  <div class="wrap two-col">
+    <div><div class="kicker">{{ section.settings.kicker }}</div><h2 class="h2" id="cm-{{ section.id }}">{{ section.settings.heading }}</h2></div>
+    <dl class="spec">
+      {%- for block in section.blocks -%}<div {{ block.shopify_attributes }}><dt>{{ block.settings.label }}</dt><dd>{% render 'rt', t: block.settings.value %}</dd></div>{%- endfor -%}
+    </dl>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Specification list",
+  "class": "section-spec",
+  "settings": [
+    { "type": "text", "id": "anchor", "label": "Anchor id", "default": "composition" },
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "On every jar" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Full composition" }
+  ],
+  "blocks": [ { "type": "row", "name": "Row", "settings": [
+    { "type": "text", "id": "label", "label": "Label", "default": "Label" },
+    { "type": "inline_richtext", "id": "value", "label": "Value" }
+  ] } ],
+  "presets": [ { "name": "Specification list" } ]
+}
+{% endschema %}

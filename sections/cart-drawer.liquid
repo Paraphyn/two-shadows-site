@@ -1,0 +1,45 @@
+<div class="drawer" id="CartDrawer" role="dialog" aria-modal="true" aria-labelledby="CartDrawerTitle" hidden data-cart-drawer>
+  <div class="drawer-bg" data-cart-close></div>
+  <div class="drawer-panel">
+    <div class="drawer-head">
+      <h2 id="CartDrawerTitle">{{ 'cart.title' | t }}</h2>
+      <button type="button" class="drawer-x" data-cart-close aria-label="{{ 'cart.close' | t }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <div class="drawer-body" data-cart-body>
+      {%- if cart.item_count == 0 -%}
+        <p class="drawer-empty">{{ 'cart.empty' | t }}</p>
+      {%- else -%}
+        <ul class="cart-lines">
+          {%- for item in cart.items -%}
+            <li class="cart-line">
+              <span class="cl-img">{%- if item.image -%}{{ item.image | image_url: width: 160 | image_tag: width: 80, height: 80, loading: 'lazy', alt: item.title }}{%- else -%}<img src="{{ 'ing-chews-thumb-120.webp' | asset_url }}" width="80" height="80" alt="" loading="lazy">{%- endif -%}</span>
+              <span class="cl-info">
+                <a href="{{ item.url }}"><b>{{ item.product.title }}</b></a>
+                {%- unless item.product.has_only_default_variant %}<small>{{ item.variant.title }}</small>{% endunless -%}
+                {%- if item.selling_plan_allocation %}<small>{{ item.selling_plan_allocation.selling_plan.name }}</small>{% endif -%}
+                <span class="qty">
+                  <button type="button" data-qty="{{ item.key }}" data-q="{{ item.quantity | minus: 1 }}" aria-label="{{ 'cart.decrease' | t }}">−</button>
+                  <span aria-label="{{ 'cart.quantity' | t }}">{{ item.quantity }}</span>
+                  <button type="button" data-qty="{{ item.key }}" data-q="{{ item.quantity | plus: 1 }}" aria-label="{{ 'cart.increase' | t }}">+</button>
+                </span>
+              </span>
+              <span class="cl-price">{{ item.final_line_price | money }}</span>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </div>
+    {%- if cart.item_count > 0 -%}
+      <div class="drawer-foot">
+        <p class="drawer-total"><span>{{ 'cart.subtotal' | t }}</span><b>{{ cart.total_price | money }}</b></p>
+        <p class="small">{{ 'cart.taxes_shipping' | t }}</p>
+        <form action="{{ routes.cart_url }}" method="post"><button type="submit" name="checkout" class="btn btn-block">{{ 'cart.checkout' | t }}</button></form>
+        <a class="tlink" href="{{ routes.cart_url }}">{{ 'cart.view' | t }}</a>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{ "name": "Cart drawer", "settings": [] }
+{% endschema %}

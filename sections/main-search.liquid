@@ -1,0 +1,22 @@
+<section class="page-hero"><div class="wrap">
+  <h1>{{ 'search.title' | t }}</h1>
+  <form action="{{ routes.search_url }}" method="get" role="search" class="batch-form" style="max-width:620px;margin-top:16px">
+    <label class="vh" for="SearchQ">{{ 'search.title' | t }}</label>
+    <input id="SearchQ" type="search" name="q" value="{{ search.terms | escape }}" placeholder="{{ 'search.placeholder' | t }}" style="text-transform:none;letter-spacing:0">
+    <button class="btn" type="submit">{{ 'search.submit' | t }}</button>
+  </form>
+</div></section>
+{%- if search.performed -%}
+<section class="sec" style="padding-top:24px"><div class="wrap">
+  {%- if search.results_count == 0 -%}
+    <p class="lead">{{ 'search.none' | t: terms: search.terms }}</p>
+  {%- else -%}
+    <ul class="results">
+      {%- for item in search.results -%}<li><a class="tlink" href="{{ item.url }}">{{ item.title }}</a></li>{%- endfor -%}
+    </ul>
+  {%- endif -%}
+</div></section>
+{%- endif -%}
+{% schema %}
+{ "name": "Search", "settings": [] }
+{% endschema %}

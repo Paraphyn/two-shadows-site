@@ -1,0 +1,27 @@
+<section class="sec story" id="story" aria-labelledby="st-{{ section.id }}">
+  <div class="wrap story-in">
+    <div class="story-img">{% render 'ts-image', image: section.settings.image, asset: 'story-frenchie.webp', width: 1168, height: 880, alt: section.settings.image_alt, sizes: '(max-width: 760px) 100vw, 50vw' %}</div>
+    <div>
+      <div class="kicker">{{ section.settings.kicker }}</div>
+      <h2 class="h2" id="st-{{ section.id }}" style="margin-bottom:24px">{{ section.settings.heading }}</h2>
+      {% render 'rt', t: section.settings.text %}
+      {%- if section.settings.sign != blank %}<p class="sign">{{ section.settings.sign }}</p>{% endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Story",
+  "class": "section-story",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "Our story" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Two shadows, one bond" },
+    { "type": "richtext", "id": "text", "label": "Text", "default": "<p>Every good dog has a person walking beside it.</p>" },
+    { "type": "text", "id": "sign", "label": "Sign-off", "default": "Better lives for pets. Peace of mind for their people." },
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "text", "id": "image_alt", "label": "Alt text for the built-in photo", "default": "A French Bulldog on a linen sofa with its owner’s hand on its back" }
+  ],
+  "presets": [ { "name": "Story" } ]
+}
+{% endschema %}

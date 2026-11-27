@@ -1,0 +1,204 @@
+{
+  "sections": {
+    "hero": {
+      "type": "ts-page-hero",
+      "settings": {
+        "kicker": "Ingredients & science",
+        "heading": "Simple, named, on the label",
+        "lead": "<p>Every chew combines one live gut-flora culture with prebiotic fibre and seeds. Here’s what each ingredient is, and the full composition printed on every jar.</p>"
+      },
+      "blocks": {
+        "toc1": {
+          "type": "toc",
+          "settings": {
+            "label": "Key ingredients",
+            "url": "#inside"
+          }
+        },
+        "toc2": {
+          "type": "toc",
+          "settings": {
+            "label": "Why this strain",
+            "url": "#ws"
+          }
+        },
+        "toc3": {
+          "type": "toc",
+          "settings": {
+            "label": "Full composition",
+            "url": "#composition"
+          }
+        },
+        "toc4": {
+          "type": "toc",
+          "settings": {
+            "label": "Feeding guide",
+            "url": "#feeding"
+          }
+        }
+      },
+      "block_order": [
+        "toc1",
+        "toc2",
+        "toc3",
+        "toc4"
+      ]
+    },
+    "inside": {
+      "type": "ts-inside",
+      "settings": {
+        "foot_note": "<p>Bacillus velezensis is listed as a zootechnical additive (4b1820, 7.50 × 10¹¹ CFU per kg). <a href=\"/pages/ingredients#composition\">See full composition</a></p>"
+      },
+      "blocks": {
+        "ingredient1": {
+          "type": "ingredient",
+          "settings": {
+            "asset": "ing-chews.webp",
+            "alt": "Two Shadows soft chews, one broken in half",
+            "title": "<em>Bacillus velezensis</em>",
+            "text": "A live gut-flora culture that helps support a balanced digestive system."
+          }
+        },
+        "ingredient2": {
+          "type": "ingredient",
+          "settings": {
+            "asset": "ing-inulin.webp",
+            "alt": "Inulin powder on a wooden spoon next to chicory root",
+            "title": "Inulin",
+            "text": "A prebiotic fibre from chicory root that feeds the good bacteria already in the gut."
+          }
+        },
+        "ingredient3": {
+          "type": "ingredient",
+          "settings": {
+            "asset": "ing-psyllium.webp",
+            "alt": "Psyllium husk in a ceramic bowl",
+            "title": "Psyllium husk",
+            "text": "A gentle natural fibre for everyday digestive comfort."
+          }
+        },
+        "ingredient4": {
+          "type": "ingredient",
+          "settings": {
+            "asset": "ing-pumpkin.webp",
+            "alt": "Pumpkin seeds beside a halved squash",
+            "title": "Pumpkin & squash seeds",
+            "text": "A familiar, wholesome source of fibre and natural oils."
+          }
+        },
+        "strain_point5": {
+          "type": "strain_point",
+          "settings": {
+            "title": "A named, deposited strain",
+            "text": "DSM 15544 is its reference number in the German collection of microorganisms (DSMZ), so the culture can be traced and identified."
+          }
+        },
+        "strain_point6": {
+          "type": "strain_point",
+          "settings": {
+            "title": "Spore-forming by nature",
+            "text": "Bacillus cultures form spores, a dormant, protective state, which is why they’re widely used in shelf-stable feeds. [Survival through production and storage: confirm with manufacturer]"
+          }
+        },
+        "strain_point7": {
+          "type": "strain_point",
+          "settings": {
+            "title": "Listed on every jar",
+            "text": "It appears in the composition as zootechnical additive 4b1820, at 7.50 × 10¹¹ CFU per kg."
+          }
+        },
+        "strain_point8": {
+          "type": "strain_point",
+          "settings": {
+            "title": "In every chew",
+            "text": "[X billion cultures per chew, guaranteed to the end of shelf life: confirm figure with manufacturer]"
+          }
+        }
+      },
+      "block_order": [
+        "ingredient1",
+        "ingredient2",
+        "ingredient3",
+        "ingredient4",
+        "strain_point5",
+        "strain_point6",
+        "strain_point7",
+        "strain_point8"
+      ]
+    },
+    "composition": {
+      "type": "ts-composition",
+      "settings": {},
+      "blocks": {
+        "row1": {
+          "type": "row",
+          "settings": {
+            "label": "Product",
+            "value": "Gut & Digestion soft chews. Complementary feed for dogs over 12 weeks of age."
+          }
+        },
+        "row2": {
+          "type": "row",
+          "settings": {
+            "label": "Composition",
+            "value": "Tapioca starch, gram flour, glycerine, refined rapeseed oil, yeast products, potato starch, beta glucans, inulin, sugars, psyllium husk powder, pumpkin and squash seeds, crude lecithins, vegetal carbon, minerals, vegetable derivatives."
+          }
+        },
+        "row3": {
+          "type": "row",
+          "settings": {
+            "label": "Additives (per kg)",
+            "value": "Zootechnical additives: 4b1820 <em>Bacillus velezensis</em> DSM 15544 7.50 × 10¹¹ CFU."
+          }
+        },
+        "row4": {
+          "type": "row",
+          "settings": {
+            "label": "Analytical constituents",
+            "value": "Crude protein 11.5% · Crude fat 13.3% · Crude fibre 0.6% · Crude ash 3.1% · Moisture 14%."
+          }
+        },
+        "row5": {
+          "type": "row",
+          "settings": {
+            "label": "Contents",
+            "value": "60 soft chews · 120 g ℮"
+          }
+        },
+        "row6": {
+          "type": "row",
+          "settings": {
+            "label": "Made in",
+            "value": "The UK, in a GB-registered feed facility."
+          }
+        },
+        "row7": {
+          "type": "row",
+          "settings": {
+            "label": "Batch certificate",
+            "value": "<a href=\"/pages/batch\">Check your batch</a> [Certificate of analysis per batch: to be confirmed with manufacturer]"
+          }
+        }
+      },
+      "block_order": [
+        "row1",
+        "row2",
+        "row3",
+        "row4",
+        "row5",
+        "row6",
+        "row7"
+      ]
+    },
+    "feeding": {
+      "type": "ts-feeding",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero",
+    "inside",
+    "composition",
+    "feeding"
+  ]
+}

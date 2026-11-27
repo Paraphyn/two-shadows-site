@@ -1,0 +1,31 @@
+<section class="sec tint" id="feeding" aria-labelledby="fg-{{ section.id }}">
+  <div class="wrap two-col">
+    <div>
+      <div class="kicker">{{ section.settings.kicker }}</div>
+      <h2 class="h2" id="fg-{{ section.id }}" style="margin-bottom:20px">{{ section.settings.heading }}</h2>
+      <p class="lead">{% render 'rt', t: section.settings.lead %}</p>
+    </div>
+    <div>
+      {% render 'feeding-table' %}
+      <div style="margin-top:24px">{% render 'help-note' %}</div>
+      {%- if section.settings.note != blank %}<p style="font-size:15px;color:var(--muted);margin-top:16px">{{ section.settings.note }}</p>{% endif -%}
+      {%- if section.settings.button_label != blank -%}<a class="btn" href="{{ section.settings.button_link | default: '/products/gut-and-digestion' }}" style="margin-top:28px">{{ section.settings.button_label }}</a>{%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Feeding guide",
+  "class": "section-feeding",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "How much" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Feeding guide" },
+    { "type": "text", "id": "lead", "label": "Lead", "default": "Give daily, by weight. Allow four to six weeks for best results." },
+    { "type": "text", "id": "note", "label": "Note", "default": "A complementary feed, not a veterinary medicine. If your dog is unwell, on medication or has a health condition, speak to your vet first." },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Shop Gut & Digestion" },
+    { "type": "url", "id": "button_link", "label": "Button link" }
+  ],
+  "presets": [ { "name": "Feeding guide" } ]
+}
+{% endschema %}

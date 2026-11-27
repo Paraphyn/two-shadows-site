@@ -1,0 +1,184 @@
+{
+  "sections": {
+    "hero": {
+      "type": "ts-page-hero",
+      "settings": {
+        "kicker": "FAQ",
+        "heading": "Good questions",
+        "lead": "<p>Everything we’re asked most about Gut & Digestion. Can’t find yours? <a href=\"/pages/contact\">Get in touch</a>.</p>"
+      }
+    },
+    "faq": {
+      "type": "ts-faq",
+      "settings": {
+        "kicker": "Still unsure?",
+        "heading": "All questions",
+        "lead": "Email us your dog’s weight, age and anything else we should know, and we’ll help you choose.",
+        "contact_label": "Contact us",
+        "all_link_label": "",
+        "structured_data": true
+      },
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "What are Gut & Digestion chews?",
+            "answer": "<p>Soft chews for dogs made with Bacillus velezensis, a live gut-flora culture, plus prebiotic inulin and natural fibres. They’re a complementary feed designed to support healthy digestion.</p>",
+            "draft": false
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "What is Bacillus velezensis?",
+            "answer": "<p>A naturally occurring, spore-forming bacterium. The strain we use, DSM 15544, is listed as zootechnical additive 4b1820, a gut flora stabiliser: it helps keep the good bacteria in your dog’s gut in balance.</p>",
+            "draft": false
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Does it contain probiotics?",
+            "answer": "<p>Yes. Bacillus velezensis DSM 15544 is listed as a zootechnical additive at 7.50 × 10¹¹ CFU per kg.</p>",
+            "draft": false
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "question": "Why a soft chew?",
+            "answer": "<p>Most dogs take it like a treat, so there’s no powder to mix and no tablet to hide in food. That makes the daily routine easier to keep up.</p>",
+            "draft": false
+          }
+        },
+        "q5": {
+          "type": "question",
+          "settings": {
+            "question": "How many should I give?",
+            "answer": "<p>It depends on weight: under 10 kg, one chew a day; 10–30 kg, two; 30–45 kg, three; over 45 kg, four. The guide is on every jar. Not sure? <a href=\"mailto:info@twoshadows.co.uk?subject=How%20many%20chews%20for%20my%20dog%3F\">Email us your dog’s weight</a>.</p>",
+            "draft": false
+          }
+        },
+        "q6": {
+          "type": "question",
+          "settings": {
+            "question": "Is it right for my dog?",
+            "answer": "<p>Gut &amp; Digestion is for dogs over 12 weeks old. If your dog is unwell, on medication or has a health condition, have a word with your vet first.</p>",
+            "draft": false
+          }
+        },
+        "q7": {
+          "type": "question",
+          "settings": {
+            "question": "Can puppies, pregnant or nursing dogs have it?",
+            "answer": "<p>Puppies can have it from 12 weeks of age, at the amount for their weight. If your dog is pregnant or nursing, ask your vet before starting.</p>",
+            "draft": true
+          }
+        },
+        "q8": {
+          "type": "question",
+          "settings": {
+            "question": "Is it safe? Are there any side effects?",
+            "answer": "<p>It’s a complementary feed made in a GB-registered feed facility, using an additive authorised for dogs. As with any change to the diet, start at the recommended amount. If you notice anything unusual, stop and speak to your vet.</p>",
+            "draft": true
+          }
+        },
+        "q9": {
+          "type": "question",
+          "settings": {
+            "question": "My dog is on medication or antibiotics. Can they still have it?",
+            "answer": "<p>Check with your vet before starting, and follow their advice on timing alongside any course of medication.</p>",
+            "draft": true
+          }
+        },
+        "q10": {
+          "type": "question",
+          "settings": {
+            "question": "Does it contain common allergens?",
+            "answer": "<p>The full composition is on every jar and in the product details above. The chews include gram flour (chickpea), yeast products and pumpkin and squash seeds. [Allergen and cross-contact information to be confirmed]</p>",
+            "draft": true
+          }
+        },
+        "q11": {
+          "type": "question",
+          "settings": {
+            "question": "How soon will I notice a difference?",
+            "answer": "<p>Every dog is different. Give it four to six weeks of daily use.</p>",
+            "draft": false
+          }
+        },
+        "q12": {
+          "type": "question",
+          "settings": {
+            "question": "What if my dog doesn’t like it?",
+            "answer": "<p>Most dogs treat it as a treat, but every dog is different. Try breaking a chew in half or giving it with a meal. If it still doesn’t work out, the [XX]-day Happy Gut Guarantee covers your first jar. [Terms to be confirmed]</p>",
+            "draft": false
+          }
+        },
+        "q13": {
+          "type": "question",
+          "settings": {
+            "question": "How long does a jar last?",
+            "answer": "<p>There are 60 chews in a jar: 60 days for a small dog, 30 days for a 10–30 kg dog, 20 days at three a day and 15 days at four.</p>",
+            "draft": false
+          }
+        },
+        "q14": {
+          "type": "question",
+          "settings": {
+            "question": "How should I store it?",
+            "answer": "<p>Keep the lid closed and store the jar in a cool, dry place out of direct sunlight. Use within [X] weeks of opening.</p>",
+            "draft": true
+          }
+        },
+        "q15": {
+          "type": "question",
+          "settings": {
+            "question": "How does the subscription work, and how do I cancel?",
+            "answer": "<p>Choose Subscribe &amp; save and a jar arrives every [X] weeks for [£PRICE]. We’ll email you before each order. You can skip, pause or cancel online at any time. [Subscription terms to be confirmed]</p>",
+            "draft": false
+          }
+        },
+        "q16": {
+          "type": "question",
+          "settings": {
+            "question": "How much is delivery, and how long does it take?",
+            "answer": "<p>We deliver across the UK. Orders are dispatched within [X] working days. Delivery is [£X.XX], or free over [£XX]. [Carrier and times to be confirmed]</p>",
+            "draft": false
+          }
+        },
+        "q17": {
+          "type": "question",
+          "settings": {
+            "question": "Where is it made?",
+            "answer": "<p>In the UK, in a GB-registered feed facility.</p>",
+            "draft": false
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7",
+        "q8",
+        "q9",
+        "q10",
+        "q11",
+        "q12",
+        "q13",
+        "q14",
+        "q15",
+        "q16",
+        "q17"
+      ]
+    }
+  },
+  "order": [
+    "hero",
+    "faq"
+  ]
+}

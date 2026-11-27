@@ -1,0 +1,385 @@
+{
+  "sections": {
+    "hero": {
+      "type": "ts-hero",
+      "settings": {
+        "kicker": "Gut & Digestion soft chews",
+        "heading": "Good days start with a happy gut",
+        "text": "A daily soft chew made in the UK, with a live gut-flora culture and natural fibres to support healthy digestion. Small enough to become part of the routine you already share.",
+        "button_label": "Shop Gut & Digestion",
+        "link_label": "What’s inside"
+      },
+      "blocks": {
+        "note1": {
+          "type": "note",
+          "settings": {
+            "text": "Made in the UK"
+          }
+        },
+        "note2": {
+          "type": "note",
+          "settings": {
+            "text": "60 chews per jar"
+          }
+        },
+        "note3": {
+          "type": "note",
+          "settings": {
+            "text": "For dogs 12 weeks+"
+          }
+        }
+      },
+      "block_order": [
+        "note1",
+        "note2",
+        "note3"
+      ]
+    },
+    "product": {
+      "type": "ts-product",
+      "settings": {},
+      "blocks": {
+        "promise1": {
+          "type": "promise",
+          "settings": {
+            "icon": "shield",
+            "title": "[XX]-day Happy Gut Guarantee",
+            "text": "Not happy with your first jar? We’ll refund it, even if it’s opened. [terms to be confirmed]"
+          }
+        },
+        "promise2": {
+          "type": "promise",
+          "settings": {
+            "icon": "truck",
+            "title": "Dispatched within [X] working days",
+            "text": "Free UK delivery over [£XX], otherwise [£X.XX]."
+          }
+        },
+        "check3": {
+          "type": "check",
+          "settings": {
+            "text": "Supports healthy digestion"
+          }
+        },
+        "check4": {
+          "type": "check",
+          "settings": {
+            "text": "Helps keep gut flora in balance"
+          }
+        },
+        "check5": {
+          "type": "check",
+          "settings": {
+            "text": "One to four chews a day, by weight"
+          }
+        },
+        "fact6": {
+          "type": "fact",
+          "settings": {
+            "label": "Contents",
+            "value": "60 soft chews"
+          }
+        },
+        "fact7": {
+          "type": "fact",
+          "settings": {
+            "label": "Net weight",
+            "value": "120 g ℮"
+          }
+        },
+        "fact8": {
+          "type": "fact",
+          "settings": {
+            "label": "Lasts",
+            "value": "30 days*"
+          }
+        },
+        "fact9": {
+          "type": "fact",
+          "settings": {
+            "label": "For",
+            "value": "Dogs 12 wks+"
+          }
+        },
+        "accordion10": {
+          "type": "accordion",
+          "settings": {
+            "title": "Composition & additives",
+            "content": "<p><strong>Composition:</strong> Tapioca starch, gram flour, glycerine, refined rapeseed oil, yeast products, potato starch, beta glucans, inulin, sugars, psyllium husk powder, pumpkin and squash seeds, crude lecithins, vegetal carbon, minerals, vegetable derivatives.</p><p><strong>Additives (per kg):</strong> Zootechnical additives: 4b1820 Bacillus velezensis DSM 15544 7.50 × 10¹¹ CFU.</p>"
+          }
+        },
+        "accordion11": {
+          "type": "accordion",
+          "settings": {
+            "title": "Analytical constituents",
+            "content": "<p>Crude protein 11.5% · Crude fat 13.3% · Crude fibre 0.6% · Crude ash 3.1% · Moisture 14%.</p>"
+          }
+        },
+        "feeding12": {
+          "type": "feeding",
+          "settings": {
+            "title": "Feeding guide",
+            "content": "<p>A complementary feed for dogs over 12 weeks of age. Allow 4–6 weeks for optimum results.</p>"
+          }
+        },
+        "accordion13": {
+          "type": "accordion",
+          "settings": {
+            "title": "Delivery & returns",
+            "content": "<p>UK delivery, dispatched within [X] working days; free over [£XX]. Changed your mind? Unopened jars can be returned within 14 days of delivery. <a href=\"/policies/refund-policy\">Returns policy</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "promise1",
+        "promise2",
+        "check3",
+        "check4",
+        "check5",
+        "fact6",
+        "fact7",
+        "fact8",
+        "fact9",
+        "accordion10",
+        "accordion11",
+        "feeding12",
+        "accordion13"
+      ]
+    },
+    "benefits": {
+      "type": "ts-benefits",
+      "settings": {
+        "heading": "They look after us. This is one small way to look after them."
+      },
+      "blocks": {
+        "benefit1": {
+          "type": "benefit",
+          "settings": {
+            "icon": "gut",
+            "title": "Daily digestive support",
+            "text": "A live culture and prebiotic fibre in every chew."
+          }
+        },
+        "benefit2": {
+          "type": "benefit",
+          "settings": {
+            "icon": "flora",
+            "title": "Balanced gut flora",
+            "text": "Helps the good bacteria in the gut stay in balance."
+          }
+        },
+        "benefit3": {
+          "type": "benefit",
+          "settings": {
+            "icon": "clock",
+            "title": "Easy to keep up",
+            "text": "No powders or spoons. Just a chew at the same time each day."
+          }
+        }
+      },
+      "block_order": [
+        "benefit1",
+        "benefit2",
+        "benefit3"
+      ]
+    },
+    "inside": {
+      "type": "ts-inside",
+      "settings": {
+        "foot_note": "<p>Bacillus velezensis is listed as a zootechnical additive (4b1820, 7.50 × 10¹¹ CFU per kg). <a href=\"/pages/ingredients#composition\">See full composition</a></p>"
+      },
+      "blocks": {
+        "ingredient1": {
+          "type": "ingredient",
+          "settings": {
+            "asset": "ing-chews.webp",
+            "alt": "Two Shadows soft chews, one broken in half",
+            "title": "<em>Bacillus velezensis</em>",
+            "text": "A live gut-flora culture that helps support a balanced digestive system."
+          }
+        },
+        "ingredient2": {
+          "type": "ingredient",
+          "settings": {
+            "asset": "ing-inulin.webp",
+            "alt": "Inulin powder on a wooden spoon next to chicory root",
+            "title": "Inulin",
+            "text": "A prebiotic fibre from chicory root that feeds the good bacteria already in the gut."
+          }
+        },
+        "ingredient3": {
+          "type": "ingredient",
+          "settings": {
+            "asset": "ing-psyllium.webp",
+            "alt": "Psyllium husk in a ceramic bowl",
+            "title": "Psyllium husk",
+            "text": "A gentle natural fibre for everyday digestive comfort."
+          }
+        },
+        "ingredient4": {
+          "type": "ingredient",
+          "settings": {
+            "asset": "ing-pumpkin.webp",
+            "alt": "Pumpkin seeds beside a halved squash",
+            "title": "Pumpkin & squash seeds",
+            "text": "A familiar, wholesome source of fibre and natural oils."
+          }
+        },
+        "strain_point5": {
+          "type": "strain_point",
+          "settings": {
+            "title": "A named, deposited strain",
+            "text": "DSM 15544 is its reference number in the German collection of microorganisms (DSMZ), so the culture can be traced and identified."
+          }
+        },
+        "strain_point6": {
+          "type": "strain_point",
+          "settings": {
+            "title": "Spore-forming by nature",
+            "text": "Bacillus cultures form spores, a dormant, protective state, which is why they’re widely used in shelf-stable feeds. [Survival through production and storage: confirm with manufacturer]"
+          }
+        },
+        "strain_point7": {
+          "type": "strain_point",
+          "settings": {
+            "title": "Listed on every jar",
+            "text": "It appears in the composition as zootechnical additive 4b1820, at 7.50 × 10¹¹ CFU per kg."
+          }
+        },
+        "strain_point8": {
+          "type": "strain_point",
+          "settings": {
+            "title": "In every chew",
+            "text": "[X billion cultures per chew, guaranteed to the end of shelf life: confirm figure with manufacturer]"
+          }
+        }
+      },
+      "block_order": [
+        "ingredient1",
+        "ingredient2",
+        "ingredient3",
+        "ingredient4",
+        "strain_point5",
+        "strain_point6",
+        "strain_point7",
+        "strain_point8"
+      ]
+    },
+    "story": {
+      "type": "ts-story",
+      "settings": {
+        "text": "<p>Every good dog has a person walking beside it. We started Two Shadows for that pair: the walks, the sofa, the habits you build together over years.</p><p>Our chews are made in the UK and kept simple, so looking after your dog’s gut is one more small thing you do together.</p>"
+      }
+    },
+    "howto": {
+      "type": "ts-howto",
+      "settings": {},
+      "blocks": {
+        "step1": {
+          "type": "step",
+          "settings": {
+            "title": "Pick a moment",
+            "text": "After breakfast or before the morning walk works well."
+          }
+        },
+        "step2": {
+          "type": "step",
+          "settings": {
+            "title": "Give the right amount",
+            "text": "One to four chews a day, depending on weight. The guide is on the jar."
+          }
+        },
+        "step3": {
+          "type": "step",
+          "settings": {
+            "title": "Keep it going",
+            "text": "Allow four to six weeks of daily use for best results."
+          }
+        }
+      },
+      "block_order": [
+        "step1",
+        "step2",
+        "step3"
+      ]
+    },
+    "share": {
+      "type": "ts-share",
+      "settings": {}
+    },
+    "faq": {
+      "type": "ts-faq",
+      "settings": {
+        "all_link_label": "All 17 questions"
+      },
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "What are Gut & Digestion chews?",
+            "answer": "<p>Soft chews for dogs made with Bacillus velezensis, a live gut-flora culture, plus prebiotic inulin and natural fibres. They’re a complementary feed designed to support healthy digestion.</p>",
+            "draft": false
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "What is Bacillus velezensis?",
+            "answer": "<p>A naturally occurring, spore-forming bacterium. The strain we use, DSM 15544, is listed as zootechnical additive 4b1820, a gut flora stabiliser: it helps keep the good bacteria in your dog’s gut in balance.</p>",
+            "draft": false
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Does it contain probiotics?",
+            "answer": "<p>Yes. Bacillus velezensis DSM 15544 is listed as a zootechnical additive at 7.50 × 10¹¹ CFU per kg.</p>",
+            "draft": false
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "question": "Why a soft chew?",
+            "answer": "<p>Most dogs take it like a treat, so there’s no powder to mix and no tablet to hide in food. That makes the daily routine easier to keep up.</p>",
+            "draft": false
+          }
+        },
+        "q5": {
+          "type": "question",
+          "settings": {
+            "question": "How many should I give?",
+            "answer": "<p>It depends on weight: under 10 kg, one chew a day; 10–30 kg, two; 30–45 kg, three; over 45 kg, four. The guide is on every jar. Not sure? <a href=\"mailto:info@twoshadows.co.uk?subject=How%20many%20chews%20for%20my%20dog%3F\">Email us your dog’s weight</a>.</p>",
+            "draft": false
+          }
+        },
+        "q6": {
+          "type": "question",
+          "settings": {
+            "question": "Is it right for my dog?",
+            "answer": "<p>Gut &amp; Digestion is for dogs over 12 weeks old. If your dog is unwell, on medication or has a health condition, have a word with your vet first.</p>",
+            "draft": false
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6"
+      ]
+    }
+  },
+  "order": [
+    "hero",
+    "product",
+    "benefits",
+    "inside",
+    "story",
+    "howto",
+    "share",
+    "faq"
+  ]
+}

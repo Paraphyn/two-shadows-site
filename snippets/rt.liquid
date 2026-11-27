@@ -1,0 +1,5 @@
+{%- doc -%}
+  Outputs editor text and styles any [placeholder] in square brackets with the .ph class.
+  @param {string} t - text or rich text from a setting
+{%- enddoc -%}
+{{- t | replace: '[', '<span class="ph">[' | replace: ']', ']</span>' -}}

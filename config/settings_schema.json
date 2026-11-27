@@ -1,0 +1,72 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Two Shadows",
+    "theme_version": "1.0.0",
+    "theme_author": "Paraphyn",
+    "theme_documentation_url": "https://github.com/Paraphyn/two-shadows-site/tree/shopify-theme",
+    "theme_support_url": "https://github.com/Paraphyn/two-shadows-site/issues"
+  },
+  {
+    "name": "Brand",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon",
+        "info": "Square, at least 64 × 64 px"
+      },
+      {
+        "type": "text",
+        "id": "contact_email",
+        "label": "Contact email",
+        "default": "info@twoshadows.co.uk"
+      },
+      {
+        "type": "richtext",
+        "id": "legal_line",
+        "label": "Legal line in footer",
+        "default": "<p>Two Shadows is a trading name of Egor [Surname], [UK postal address].</p>"
+      },
+      {
+        "type": "richtext",
+        "id": "disclaimer",
+        "label": "Disclaimer in footer",
+        "default": "<p>Complementary feeds for dogs. Not veterinary medicines; not intended to diagnose, treat, cure or prevent any disease.</p>"
+      },
+      {
+        "type": "image_picker",
+        "id": "share_image",
+        "label": "Social sharing image",
+        "info": "1200 × 630 px. If empty, the theme's built-in image is used."
+      }
+    ]
+  },
+  {
+    "name": "Social media",
+    "settings": [
+      {
+        "type": "url",
+        "id": "social_instagram",
+        "label": "Instagram"
+      },
+      {
+        "type": "url",
+        "id": "social_tiktok",
+        "label": "TikTok"
+      }
+    ]
+  },
+  {
+    "name": "Placeholders",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_placeholders",
+        "label": "Show [placeholders] for unconfirmed facts",
+        "info": "Turn off before launch once all figures are confirmed.",
+        "default": true
+      }
+    ]
+  }
+]

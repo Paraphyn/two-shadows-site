@@ -1,0 +1,13 @@
+<article>
+  <section class="page-hero"><div class="wrap">
+    <div class="kicker">{{ article.published_at | date: format: 'date' }}</div>
+    <h1>{{ article.title }}</h1>
+  </div></section>
+  {%- if article.image -%}
+    <div class="wrap" style="margin-bottom:40px">{{ article.image | image_url: width: 1600 | image_tag: widths: '800, 1200, 1600', sizes: '100vw', loading: 'eager', style: 'border-radius:4px' }}</div>
+  {%- endif -%}
+  <section class="sec" style="padding-top:0"><div class="wrap"><div class="prose">{{ article.content }}</div></div></section>
+</article>
+{% schema %}
+{ "name": "Article", "settings": [] }
+{% endschema %}

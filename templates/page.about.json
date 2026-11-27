@@ -1,0 +1,73 @@
+{
+  "sections": {
+    "hero": {
+      "type": "ts-page-hero",
+      "settings": {
+        "kicker": "Our story",
+        "heading": "Two shadows, one bond",
+        "lead": "<p>Every good dog has a person walking beside it. We started Two Shadows for that pair: the walks, the sofa, the habits you build together over years.</p><p>Our chews are made in the UK and kept simple, so looking after your dog’s gut is one more small thing you do together.</p>",
+        "sign": "Better lives for pets. Peace of mind for their people.",
+        "asset": "story-frenchie.webp",
+        "image_alt": "A French Bulldog on a linen sofa with its owner’s hand on its back"
+      }
+    },
+    "who": {
+      "type": "ts-two-col",
+      "settings": {
+        "kicker": "The people behind it",
+        "heading": "Who we are",
+        "tint": true,
+        "text": "<p>[Founders’ photo with their dogs, their names, and a short story in their own words: how Two Shadows started and why. To be supplied by the team.]</p>"
+      }
+    },
+    "make": {
+      "type": "ts-cards",
+      "settings": {
+        "kicker": "How we make it",
+        "heading": "Made in the UK, kept simple"
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "title": "Made in Britain",
+            "text": "<p>Our chews are made in the UK, in a GB-registered feed facility.</p><p>[Facility registration number and certificates: only if confirmed in writing by the manufacturer]</p>"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "title": "One named strain",
+            "text": "<p><em>Bacillus velezensis</em> DSM 15544, listed on every jar as zootechnical additive 4b1820.</p>",
+            "link_label": "Why this strain",
+            "link_url": "/pages/ingredients#ws"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "title": "Nothing hidden",
+            "text": "<p>The full composition and analytical constituents are printed on the jar and on our site.</p>",
+            "link_label": "Full composition",
+            "link_url": "/pages/ingredients#composition"
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3"
+      ]
+    },
+    "share": {
+      "type": "ts-share",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero",
+    "who",
+    "make",
+    "share"
+  ]
+}

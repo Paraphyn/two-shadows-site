@@ -1,0 +1,18 @@
+<div class="announce">
+  {% render 'icon-flag-uk', id: 'flag-announce' %}
+  <span>{{ section.settings.text_1 }}</span>
+  {%- if section.settings.text_2 != blank -%}
+    <span class="dot">·</span><span>{% render 'rt', t: section.settings.text_2 %}</span>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Announcement bar",
+  "class": "section-announce",
+  "settings": [
+    { "type": "text", "id": "text_1", "label": "First message", "default": "Made in the UK" },
+    { "type": "inline_richtext", "id": "text_2", "label": "Second message", "default": "Free UK delivery over [£XX]" }
+  ]
+}
+{% endschema %}

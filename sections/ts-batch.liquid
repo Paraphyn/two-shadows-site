@@ -1,0 +1,39 @@
+<section class="sec tint" style="padding-top:64px" aria-labelledby="bf-{{ section.id }}">
+  <div class="wrap two-col">
+    <div>
+      <h2 class="h2" id="bf-{{ section.id }}" style="font-size:clamp(34px,3.6vw,46px)">{{ section.settings.heading }}</h2>
+      <div style="color:var(--muted);margin-top:16px">{% render 'rt', t: section.settings.help %}</div>
+    </div>
+    <div>
+      <form class="batch-form" id="batch-form" data-email="{{ settings.contact_email | escape }}" novalidate>
+        <label class="vh" for="batch-no">{{ 'batch.label' | t }}</label>
+        <input id="batch-no" name="batch" autocomplete="off" spellcheck="false" placeholder="{{ 'batch.label' | t }}" required>
+        <button class="btn" type="submit">{{ 'batch.check' | t }}</button>
+      </form>
+      <div class="batch-result" id="batch-result" role="status" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+{%- capture batch_json -%}
+  {%- for block in section.blocks -%}
+    {%- assign code = block.settings.code | upcase | remove: ' ' -%}
+    {%- if code != blank and block.settings.pdf != blank -%}{{ code | json }}:{{ block.settings.pdf | json }},{%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+<script type="application/json" id="batch-data">{ {{ batch_json | strip | remove_last: ',' }} }</script>
+
+{% schema %}
+{
+  "name": "Batch lookup",
+  "class": "section-batch",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Enter your batch number" },
+    { "type": "richtext", "id": "help", "label": "Where to find it", "default": "<p>You’ll find it on the jar.</p>" }
+  ],
+  "blocks": [ { "type": "batch", "name": "Batch certificate", "settings": [
+    { "type": "text", "id": "code", "label": "Batch number", "info": "As printed on the jar" },
+    { "type": "url", "id": "pdf", "label": "Certificate PDF link", "info": "Upload the PDF in Content → Files and paste its link here" }
+  ] } ],
+  "presets": [ { "name": "Batch lookup" } ]
+}
+{% endschema %}

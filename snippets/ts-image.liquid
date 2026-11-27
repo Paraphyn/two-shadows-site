@@ -1,0 +1,28 @@
+{%- doc -%}
+  Renders a Shopify image if one is set, otherwise a bundled theme asset.
+  @param {image} [image] - image from a setting or product media
+  @param {string} [asset] - fallback asset file name, e.g. "hero.webp"
+  @param {string} [asset_small] - smaller fallback asset for srcset (optional)
+  @param {number} [asset_small_width] - width of asset_small
+  @param {number} [width] - intrinsic width of the fallback asset
+  @param {number} [height] - intrinsic height of the fallback asset
+  @param {string} [alt] - alt text (used when the image has none)
+  @param {string} [sizes] - sizes attribute
+  @param {string} [loading] - "lazy" (default) or "eager"
+  @param {string} [fetchpriority]
+  @param {string} [widths] - comma separated widths for Shopify images
+{%- enddoc -%}
+{%- liquid
+  assign load = loading | default: 'lazy'
+  assign sz = sizes | default: '100vw'
+  assign w = widths | default: '240, 480, 720, 960, 1200, 1600'
+-%}
+{%- if image != blank -%}
+  {%- assign a = image.alt | default: alt -%}
+  {{ image | image_url: width: 1600 | image_tag: widths: w, sizes: sz, alt: a, loading: load, fetchpriority: fetchpriority }}
+{%- elsif asset != blank -%}
+  <img src="{{ asset | asset_url }}"
+    {%- if asset_small != blank %} srcset="{{ asset_small | asset_url }} {{ asset_small_width }}w, {{ asset | asset_url }} {{ width }}w" sizes="{{ sz }}"{% endif %}
+    width="{{ width | default: 1000 }}" height="{{ height | default: 1000 }}" alt="{{ alt | escape }}" loading="{{ load }}"
+    {%- if fetchpriority %} fetchpriority="{{ fetchpriority }}"{% endif %}>
+{%- endif -%}
