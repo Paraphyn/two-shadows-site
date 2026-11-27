@@ -6,6 +6,7 @@
     "name": {{ shop.name | json }},
     "url": {{ request.origin | append: '/' | json }},
     "email": {{ settings.contact_email | json }},
+    "logo": {{ 'ts-logo.png' | asset_url | prepend: 'https:' | json }},
     "areaServed": "GB"
     {%- if settings.social_instagram != blank or settings.social_tiktok != blank -%}
       ,"sameAs": [{% if settings.social_instagram != blank %}{{ settings.social_instagram | json }}{% endif %}{% if settings.social_instagram != blank and settings.social_tiktok != blank %},{% endif %}{% if settings.social_tiktok != blank %}{{ settings.social_tiktok | json }}{% endif %}]

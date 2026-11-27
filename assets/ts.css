@@ -420,3 +420,9 @@ html.no-scroll { overflow: hidden; }
 .ship-track span { display: block; height: 100%; background: var(--plum); border-radius: 3px; transition: width .3s; }
 .upsell { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 16px; padding: 12px 14px; border: 1px dashed var(--line); border-radius: 12px; font: 500 14px var(--ui); }
 .btn-sm { padding: 8px 14px; font-size: 13px; min-height: 0; }
+
+/* logo mark */
+.logo { display: inline-flex; align-items: center; gap: 12px; }
+.logo-mark { height: 26px; width: auto; flex: none; color: var(--plum); }
+.pw-mark { display: block; height: 72px; width: auto; margin: 0 0 20px; color: var(--plum); }
+@media (max-width: 760px) { .logo { gap: 8px; } .logo-mark { height: 20px; } }

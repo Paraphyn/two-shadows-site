@@ -1,0 +1,7 @@
+{%- if settings.favicon != blank -%}
+  <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 64, height: 64 }}">
+{%- else -%}
+  <link rel="icon" type="image/svg+xml" href="{{ 'ts-favicon.svg' | asset_url }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ 'ts-favicon-32.png' | asset_url }}">
+{%- endif -%}
+<link rel="apple-touch-icon" href="{{ 'ts-apple-touch-icon.png' | asset_url }}">

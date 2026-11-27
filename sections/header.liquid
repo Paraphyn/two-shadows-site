@@ -14,7 +14,7 @@
         <a href="{{ routes.root_url }}pages/about">Our story</a>
       {%- endif -%}
     </nav>
-    <a class="logo" href="{{ routes.root_url }}">{{ shop.name | upcase | escape }}</a>
+    <a class="logo" href="{{ routes.root_url }}">{% render 'logo-mark' %}<span>{{ shop.name | upcase | escape }}</span></a>
     <div class="hdr-act">
       <a class="faq-link" href="{{ routes.root_url }}pages/faq">FAQ</a>
       <a class="bag" href="{{ routes.cart_url }}" data-cart-open aria-haspopup="dialog">
