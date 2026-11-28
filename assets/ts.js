@@ -183,3 +183,25 @@
   window.addEventListener('resize', function () { if (window.innerWidth !== lastW) { lastW = window.innerWidth; fit(); } });
   lastW = window.innerWidth;
 })();
+
+/* Mobile product: size the jar so the options and buy button fit on the first screen */
+(function () {
+  var main = document.querySelector('#product .gallery-main'), add = document.querySelector('#product .add');
+  if (!main || !add) return;
+  var mq = window.matchMedia('(max-width: 760px)'), lastW = window.innerWidth;
+  function fit() {
+    var jar0 = main.querySelector('.jar');
+    main.style.height = ''; if (jar0) jar0.style.transform = '';
+    if (!mq.matches) return;
+    var r = main.getBoundingClientRect(), top = r.top + window.scrollY;
+    var rest = add.getBoundingClientRect().bottom - r.bottom;
+    var avail = window.innerHeight - top - rest - 16;
+    var h = top > window.innerHeight * 0.5 ? Math.round(r.width) : Math.round(Math.max(140, Math.min(avail, r.width)));
+    main.style.height = h + 'px';
+    var jar = main.querySelector('.jar');
+    if (jar) jar.style.transform = 'scale(' + Math.min(1.05, (h - 20) / jar.offsetHeight).toFixed(3) + ')';
+  }
+  fit();
+  window.addEventListener('load', fit);
+  window.addEventListener('resize', function () { if (window.innerWidth !== lastW) { lastW = window.innerWidth; fit(); } });
+})();

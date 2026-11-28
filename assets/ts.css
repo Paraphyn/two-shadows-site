@@ -438,3 +438,29 @@ html.no-scroll { overflow: hidden; }
   .hero p { font-size: 16px; line-height: 1.45; }
   .hero-cta { margin-top: 18px; gap: 12px 24px; }
 }
+
+/* mobile product: jar, options and the buy button on the first screen */
+@media (max-width: 760px) {
+  #product.sec { padding-top: 12px; }
+  #product .product-in { gap: 14px; }
+  #product .gallery-main { aspect-ratio: auto; height: 300px; }
+  #product .slide:first-child > img { object-fit: contain; }
+  #product .gallery-thumbs { display: flex; justify-content: center; gap: 2px; margin-top: 6px; }
+  #product .thumb { width: 24px; height: 24px; aspect-ratio: auto; border: 0; background: none; border-radius: 50%; position: relative; }
+  #product .thumb > * { display: none; }
+  #product .thumb::after { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--line); }
+  #product .thumb[aria-current="true"] { border: 0; }
+  #product .thumb[aria-current="true"]::after { background: var(--plum); width: 18px; border-radius: 4px; }
+  #product .pinfo { gap: 10px; }
+  #product .pinfo > .kicker { display: none; }
+  #product .pinfo h1, #product .pinfo h2 { font-size: 36px; }
+  #product .pinfo .sub { font-size: 15px; line-height: 1.35; font-weight: 500; }
+  #product .buybox { gap: 10px; }
+  #product .buy { gap: 8px; }
+  #product .buy legend { font-size: 12px; margin-bottom: 6px; }
+  #product .opt { padding: 11px 14px; gap: 12px; }
+  #product .opt .t { font-size: 15px; }
+  #product .opt .t small { font-size: 13px; line-height: 1.3; }
+  #product .opt .p { font-size: 16px; }
+  #product .add { min-height: 52px; }
+}
