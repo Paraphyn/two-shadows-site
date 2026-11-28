@@ -17,7 +17,7 @@
         "kicker": "The people behind it",
         "heading": "Who we are",
         "tint": true,
-        "text": "<p>[Founders’ photo with their dogs, their names, and a short story in their own words: how Two Shadows started and why. To be supplied by the team.]</p>"
+        "text": "<p>[Founders’ story and photo]</p>"
       }
     },
     "make": {
@@ -31,7 +31,7 @@
           "type": "card",
           "settings": {
             "title": "Made in Britain",
-            "text": "<p>Our chews are made in the UK, in a GB-registered feed facility.</p><p>[Facility registration number and certificates: only if confirmed in writing by the manufacturer]</p>"
+            "text": "<p>Our chews are made in the UK, in a GB-registered feed facility.</p><p></p>"
           }
         },
         "card2": {

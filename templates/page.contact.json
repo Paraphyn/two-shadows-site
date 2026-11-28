@@ -28,7 +28,7 @@
           "type": "card",
           "settings": {
             "title": "WhatsApp",
-            "text": "<p>[Number or chat link to be added]</p><p>Quick questions, [hours].</p>"
+            "text": "<p>[WhatsApp number]</p><p>Quick questions, [hours].</p>"
           }
         },
         "card3": {

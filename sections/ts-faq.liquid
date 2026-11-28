@@ -10,7 +10,7 @@
       <div class="acc">
         {%- for block in section.blocks -%}
           <details {{ block.shopify_attributes }}><summary><span>{{ block.settings.question }}</span>{% render 'icon-chevron' %}</summary>
-            <div class="ans">{%- if block.settings.draft -%}<span class="draft ph">Draft · confirm with manufacturer</span> {% endif -%}{% render 'rt', t: block.settings.answer %}</div>
+            <div class="ans">{% render 'rt', t: block.settings.answer %}</div>
           </details>
         {%- endfor -%}
       </div>

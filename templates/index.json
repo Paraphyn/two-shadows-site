@@ -44,7 +44,7 @@
           "settings": {
             "icon": "shield",
             "title": "[XX]-day Happy Gut Guarantee",
-            "text": "Not happy with your first jar? We’ll refund it, even if it’s opened. [terms to be confirmed]"
+            "text": "Not happy with your first jar? We’ll refund it, even if it’s opened."
           }
         },
         "promise2": {
@@ -236,7 +236,7 @@
           "type": "strain_point",
           "settings": {
             "title": "Spore-forming by nature",
-            "text": "Bacillus cultures form spores, a dormant, protective state, which is why they’re widely used in shelf-stable feeds. [Survival through production and storage: confirm with manufacturer]"
+            "text": "Bacillus cultures form spores, a dormant, protective state, which is why they’re widely used in shelf-stable feeds."
           }
         },
         "strain_point7": {
@@ -250,7 +250,7 @@
           "type": "strain_point",
           "settings": {
             "title": "In every chew",
-            "text": "[X billion cultures per chew, guaranteed to the end of shelf life: confirm figure with manufacturer]"
+            "text": "[X] billion live cultures per chew, guaranteed to the end of shelf life."
           }
         }
       },
