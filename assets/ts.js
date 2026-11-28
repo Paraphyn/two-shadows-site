@@ -164,3 +164,22 @@
     });
   })();
 })();
+
+/* Mobile hero: size the photo so the main button fits on the first screen */
+(function () {
+  var img = document.querySelector('.hero-img'), cta = document.querySelector('.hero-cta .btn') || document.querySelector('.hero-cta');
+  if (!img || !cta) return;
+  var mq = window.matchMedia('(max-width: 760px)'), lastW = 0;
+  function fit() {
+    if (!mq.matches) { img.style.height = ''; return; }
+    img.style.height = '';
+    var r = img.getBoundingClientRect(), imgTop = r.top + window.scrollY;
+    var textToCta = cta.getBoundingClientRect().bottom - r.bottom;
+    var avail = window.innerHeight - imgTop - textToCta - 20;
+    img.style.height = Math.round(Math.max(110, Math.min(avail, r.width * 1.1))) + 'px';
+  }
+  fit();
+  window.addEventListener('load', fit);
+  window.addEventListener('resize', function () { if (window.innerWidth !== lastW) { lastW = window.innerWidth; fit(); } });
+  lastW = window.innerWidth;
+})();

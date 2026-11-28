@@ -426,3 +426,15 @@ html.no-scroll { overflow: hidden; }
 .logo-mark { height: 26px; width: auto; flex: none; color: var(--plum); }
 .pw-mark { display: block; height: 72px; width: auto; margin: 0 0 20px; color: var(--plum); }
 @media (max-width: 760px) { .logo { gap: 8px; } .logo-mark { height: 20px; } }
+
+/* mobile hero: photo shrinks so the CTA sits on the first screen */
+@media (max-width: 760px) {
+  .hero { padding: 16px 0 56px; }
+  .hero-in { gap: 18px; }
+  .hero-img { width: 100%; aspect-ratio: 4 / 3; }
+  .hero-img img { object-position: 50% 22%; }
+  .hero .kicker { margin-bottom: 6px; }
+  .hero h1 { margin-bottom: 10px; font-size: 44px; }
+  .hero p { font-size: 16px; line-height: 1.45; }
+  .hero-cta { margin-top: 18px; gap: 12px 24px; }
+}
